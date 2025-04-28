@@ -1,0 +1,922 @@
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=15015) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+2025-04-28 11:42:48,033 [Job erpnext.localhost||d13bced0-dad8-46f0-9364-9a0ad3d5296f]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 1643, in perform_job
+    return_value = job.perform()
+                   ^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/job.py", line 1344, in perform
+    self._result = self._execute()
+                   ^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/job.py", line 1378, in _execute
+    result = self.func(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/background_jobs.py", line 243, in execute_job
+    frappe.init(site, force=True)
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 270, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1374, in setup_module_map
+    for module in get_module_list(app):
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1215, in get_module_list
+    return get_file_items(get_app_path(app_name, "modules.txt"))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1180, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1210, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1151, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'erpnext'
+
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=15015) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+2025-04-28 11:42:48,089 [Job erpnext.localhost||4de2c30b-1aad-481c-a636-f37cbf280eb6]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 1643, in perform_job
+    return_value = job.perform()
+                   ^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/job.py", line 1344, in perform
+    self._result = self._execute()
+                   ^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/job.py", line 1378, in _execute
+    result = self.func(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/background_jobs.py", line 243, in execute_job
+    frappe.init(site, force=True)
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 270, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1374, in setup_module_map
+    for module in get_module_list(app):
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1215, in get_module_list
+    return get_file_items(get_app_path(app_name, "modules.txt"))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1180, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1210, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1151, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'erpnext'
+
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=15015) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+2025-04-28 11:42:48,148 [Job erpnext.localhost||43e7026f-6e64-4ddf-9e32-5497c3c527ad]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 1643, in perform_job
+    return_value = job.perform()
+                   ^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/job.py", line 1344, in perform
+    self._result = self._execute()
+                   ^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/job.py", line 1378, in _execute
+    result = self.func(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/background_jobs.py", line 243, in execute_job
+    frappe.init(site, force=True)
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 270, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1374, in setup_module_map
+    for module in get_module_list(app):
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1215, in get_module_list
+    return get_file_items(get_app_path(app_name, "modules.txt"))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1180, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1210, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1151, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'erpnext'
+
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=15015) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+2025-04-28 11:42:48,200 [Job erpnext.localhost||72249634-1f23-46fd-aa00-0d181ca57177]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 1643, in perform_job
+    return_value = job.perform()
+                   ^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/job.py", line 1344, in perform
+    self._result = self._execute()
+                   ^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/job.py", line 1378, in _execute
+    result = self.func(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/background_jobs.py", line 243, in execute_job
+    frappe.init(site, force=True)
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 270, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1374, in setup_module_map
+    for module in get_module_list(app):
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1215, in get_module_list
+    return get_file_items(get_app_path(app_name, "modules.txt"))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1180, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1210, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1151, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'erpnext'
+
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=15015) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+2025-04-28 11:42:48,255 [Job erpnext.localhost||2c2dfed0-19f1-4356-9880-786d088bb5f5]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 1643, in perform_job
+    return_value = job.perform()
+                   ^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/job.py", line 1344, in perform
+    self._result = self._execute()
+                   ^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/job.py", line 1378, in _execute
+    result = self.func(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/background_jobs.py", line 243, in execute_job
+    frappe.init(site, force=True)
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 270, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1374, in setup_module_map
+    for module in get_module_list(app):
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1215, in get_module_list
+    return get_file_items(get_app_path(app_name, "modules.txt"))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1180, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1210, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1151, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'erpnext'
+
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=15015) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+2025-04-28 11:42:48,305 [Job erpnext.localhost||150f19b3-9a28-49c6-99cb-44bdc3e4b8af]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 1643, in perform_job
+    return_value = job.perform()
+                   ^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/job.py", line 1344, in perform
+    self._result = self._execute()
+                   ^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/job.py", line 1378, in _execute
+    result = self.func(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/background_jobs.py", line 243, in execute_job
+    frappe.init(site, force=True)
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 270, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1374, in setup_module_map
+    for module in get_module_list(app):
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1215, in get_module_list
+    return get_file_items(get_app_path(app_name, "modules.txt"))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1180, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1210, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1151, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'erpnext'
+
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=15015) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+2025-04-28 11:42:48,359 [Job erpnext.localhost||4896958e-7a8f-4eec-98d9-920e2a71772f]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 1643, in perform_job
+    return_value = job.perform()
+                   ^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/job.py", line 1344, in perform
+    self._result = self._execute()
+                   ^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/job.py", line 1378, in _execute
+    result = self.func(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/background_jobs.py", line 243, in execute_job
+    frappe.init(site, force=True)
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 270, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1374, in setup_module_map
+    for module in get_module_list(app):
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1215, in get_module_list
+    return get_file_items(get_app_path(app_name, "modules.txt"))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1180, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1210, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1151, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'erpnext'
+
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=15015) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+2025-04-28 11:42:48,412 [Job erpnext.localhost||d2cb53e6-3dbb-4ec8-b76d-f8639a9241bd]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 1643, in perform_job
+    return_value = job.perform()
+                   ^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/job.py", line 1344, in perform
+    self._result = self._execute()
+                   ^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/job.py", line 1378, in _execute
+    result = self.func(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/background_jobs.py", line 243, in execute_job
+    frappe.init(site, force=True)
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 270, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1374, in setup_module_map
+    for module in get_module_list(app):
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1215, in get_module_list
+    return get_file_items(get_app_path(app_name, "modules.txt"))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1180, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1210, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1151, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'erpnext'
+
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=15015) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+2025-04-28 11:42:48,464 [Job erpnext.localhost||b705d64d-97e9-444e-8a00-a6e341ac36b0]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 1643, in perform_job
+    return_value = job.perform()
+                   ^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/job.py", line 1344, in perform
+    self._result = self._execute()
+                   ^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/job.py", line 1378, in _execute
+    result = self.func(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/background_jobs.py", line 243, in execute_job
+    frappe.init(site, force=True)
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 270, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1374, in setup_module_map
+    for module in get_module_list(app):
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1215, in get_module_list
+    return get_file_items(get_app_path(app_name, "modules.txt"))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1180, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1210, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1151, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'erpnext'
+
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=15015) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+2025-04-28 11:42:48,518 [Job erpnext.localhost||11c2265f-2ab2-4791-81f3-b8a8a6abfaa6]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 1643, in perform_job
+    return_value = job.perform()
+                   ^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/job.py", line 1344, in perform
+    self._result = self._execute()
+                   ^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/job.py", line 1378, in _execute
+    result = self.func(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/background_jobs.py", line 243, in execute_job
+    frappe.init(site, force=True)
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 270, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1374, in setup_module_map
+    for module in get_module_list(app):
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1215, in get_module_list
+    return get_file_items(get_app_path(app_name, "modules.txt"))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1180, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1210, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1151, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'erpnext'
+
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=15015) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+2025-04-28 11:42:48,571 [Job erpnext.localhost||16b98e80-1d48-486e-8ccc-e2535a50eb8c]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 1643, in perform_job
+    return_value = job.perform()
+                   ^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/job.py", line 1344, in perform
+    self._result = self._execute()
+                   ^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/job.py", line 1378, in _execute
+    result = self.func(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/background_jobs.py", line 243, in execute_job
+    frappe.init(site, force=True)
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 270, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1374, in setup_module_map
+    for module in get_module_list(app):
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1215, in get_module_list
+    return get_file_items(get_app_path(app_name, "modules.txt"))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1180, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1210, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/__init__.py", line 1151, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'erpnext'
+
+2025-04-28 11:44:00,418 Could not connect to Redis instance: Connection closed by server. Retrying in 2 seconds...
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/pytz/tzinfo.py:27: DeprecationWarning: datetime.datetime.utcfromtimestamp() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.fromtimestamp(timestamp, datetime.UTC).
+  _epoch = datetime.utcfromtimestamp(0)
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/googleapiclient/model.py:30: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+  import pkg_resources
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/pkg_resources/__init__.py:3147: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('google')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/pkg_resources/__init__.py:3147: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('google')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/pkg_resources/__init__.py:3147: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('google')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py:1305: DeprecationWarning: This process (pid=16281) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
