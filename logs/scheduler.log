@@ -1,0 +1,343 @@
+2025-05-01 10:16:01,100 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 1428, in get_connection
+    if connection.can_read() and self.cache is None:
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 570, in can_read
+    return self._parser.can_read(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/_parsers/hiredis.py", line 79, in can_read
+    return self.read_from_socket(timeout=timeout, raise_on_timeout=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/_parsers/hiredis.py", line 90, in read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 357, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/retry.py", line 62, in call_with_retry
+    return do()
+           ^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 358, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 730, in _connect
+    raise err
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 718, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/scheduler.py", line 120, in enqueue_events_for_site
+    enqueue_events()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/scheduler.py", line 140, in enqueue_events
+    if job_type.enqueue():
+       ^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 71, in enqueue
+    if not self.is_job_in_queue():
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 93, in is_job_in_queue
+    return is_job_enqueued(self.rq_job_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/background_jobs.py", line 663, in is_job_enqueued
+    return get_job_status(job_id) in (JobStatus.QUEUED, JobStatus.STARTED)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/background_jobs.py", line 668, in get_job_status
+    if job := get_job(job_id):
+              ^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/background_jobs.py", line 674, in get_job
+    return Job.fetch(create_job_id(job_id), connection=get_redis_conn())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/job.py", line 670, in fetch
+    job.refresh()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/job.py", line 1033, in refresh
+    data = self.connection.hgetall(self.key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/commands/core.py", line 4978, in hgetall
+    return self.execute_command("HGETALL", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/client.py", line 559, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/client.py", line 565, in _execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 1432, in get_connection
+    connection.connect()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 363, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:11000. Connection refused.
+2025-05-01 10:24:00,442 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 1428, in get_connection
+    if connection.can_read() and self.cache is None:
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 570, in can_read
+    return self._parser.can_read(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/_parsers/hiredis.py", line 79, in can_read
+    return self.read_from_socket(timeout=timeout, raise_on_timeout=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/_parsers/hiredis.py", line 90, in read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 357, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/retry.py", line 62, in call_with_retry
+    return do()
+           ^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 358, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 730, in _connect
+    raise err
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 718, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/scheduler.py", line 120, in enqueue_events_for_site
+    enqueue_events()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/scheduler.py", line 140, in enqueue_events
+    if job_type.enqueue():
+       ^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 71, in enqueue
+    if not self.is_job_in_queue():
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 93, in is_job_in_queue
+    return is_job_enqueued(self.rq_job_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/background_jobs.py", line 663, in is_job_enqueued
+    return get_job_status(job_id) in (JobStatus.QUEUED, JobStatus.STARTED)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/background_jobs.py", line 668, in get_job_status
+    if job := get_job(job_id):
+              ^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/background_jobs.py", line 674, in get_job
+    return Job.fetch(create_job_id(job_id), connection=get_redis_conn())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/job.py", line 670, in fetch
+    job.refresh()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/job.py", line 1033, in refresh
+    data = self.connection.hgetall(self.key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/commands/core.py", line 4978, in hgetall
+    return self.execute_command("HGETALL", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/client.py", line 559, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/client.py", line 565, in _execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 1432, in get_connection
+    connection.connect()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 363, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:11000. Connection refused.
+2025-05-01 10:28:00,560 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 357, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/retry.py", line 62, in call_with_retry
+    return do()
+           ^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 358, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 730, in _connect
+    raise err
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 718, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/scheduler.py", line 120, in enqueue_events_for_site
+    enqueue_events()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/scheduler.py", line 140, in enqueue_events
+    if job_type.enqueue():
+       ^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 71, in enqueue
+    if not self.is_job_in_queue():
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 93, in is_job_in_queue
+    return is_job_enqueued(self.rq_job_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/background_jobs.py", line 663, in is_job_enqueued
+    return get_job_status(job_id) in (JobStatus.QUEUED, JobStatus.STARTED)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/background_jobs.py", line 668, in get_job_status
+    if job := get_job(job_id):
+              ^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/background_jobs.py", line 674, in get_job
+    return Job.fetch(create_job_id(job_id), connection=get_redis_conn())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/job.py", line 670, in fetch
+    job.refresh()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/job.py", line 1033, in refresh
+    data = self.connection.hgetall(self.key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/commands/core.py", line 4978, in hgetall
+    return self.execute_command("HGETALL", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/client.py", line 559, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/client.py", line 565, in _execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 1422, in get_connection
+    connection.connect()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 363, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:11000. Connection refused.
+2025-05-01 10:32:00,700 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 357, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/retry.py", line 62, in call_with_retry
+    return do()
+           ^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 358, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 730, in _connect
+    raise err
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 718, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/scheduler.py", line 120, in enqueue_events_for_site
+    enqueue_events()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/scheduler.py", line 140, in enqueue_events
+    if job_type.enqueue():
+       ^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 71, in enqueue
+    if not self.is_job_in_queue():
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 93, in is_job_in_queue
+    return is_job_enqueued(self.rq_job_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/background_jobs.py", line 663, in is_job_enqueued
+    return get_job_status(job_id) in (JobStatus.QUEUED, JobStatus.STARTED)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/background_jobs.py", line 668, in get_job_status
+    if job := get_job(job_id):
+              ^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/background_jobs.py", line 674, in get_job
+    return Job.fetch(create_job_id(job_id), connection=get_redis_conn())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/job.py", line 670, in fetch
+    job.refresh()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/job.py", line 1033, in refresh
+    data = self.connection.hgetall(self.key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/commands/core.py", line 4978, in hgetall
+    return self.execute_command("HGETALL", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/client.py", line 559, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/client.py", line 565, in _execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 1422, in get_connection
+    connection.connect()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 363, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:11000. Connection refused.
+2025-05-01 10:48:00,229 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 1428, in get_connection
+    if connection.can_read() and self.cache is None:
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 570, in can_read
+    return self._parser.can_read(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/_parsers/hiredis.py", line 79, in can_read
+    return self.read_from_socket(timeout=timeout, raise_on_timeout=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/_parsers/hiredis.py", line 90, in read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 357, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/retry.py", line 62, in call_with_retry
+    return do()
+           ^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 358, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 730, in _connect
+    raise err
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 718, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/scheduler.py", line 120, in enqueue_events_for_site
+    enqueue_events()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/scheduler.py", line 140, in enqueue_events
+    if job_type.enqueue():
+       ^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 71, in enqueue
+    if not self.is_job_in_queue():
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 93, in is_job_in_queue
+    return is_job_enqueued(self.rq_job_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/background_jobs.py", line 663, in is_job_enqueued
+    return get_job_status(job_id) in (JobStatus.QUEUED, JobStatus.STARTED)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/background_jobs.py", line 668, in get_job_status
+    if job := get_job(job_id):
+              ^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/background_jobs.py", line 674, in get_job
+    return Job.fetch(create_job_id(job_id), connection=get_redis_conn())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/job.py", line 670, in fetch
+    job.refresh()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/job.py", line 1033, in refresh
+    data = self.connection.hgetall(self.key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/commands/core.py", line 4978, in hgetall
+    return self.execute_command("HGETALL", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/client.py", line 559, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/client.py", line 565, in _execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 1432, in get_connection
+    connection.connect()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 363, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:11000. Connection refused.

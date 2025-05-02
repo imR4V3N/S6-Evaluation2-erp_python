@@ -1,0 +1,376 @@
+set -o pipefail; /usr/bin/mariadb-dump --user=_7802180657c0640e --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _7802180657c0640e | /usr/bin/gzip >> ./erpnext.localhost/private/backups/20250428_120002-erpnext_localhost-database.sql.gz
+
+Backup Summary for erpnext.localhost at 2025-04-28 12:00:05.858764
+Config  : /home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/sites/erpnext.localhost/private/backups/20250428_120002-erpnext_localhost-site_config_backup.json 127.0B
+Database: /home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/sites/erpnext.localhost/private/backups/20250428_120002-erpnext_localhost-database.sql.gz 783.1KiB
+Backup for Site erpnext.localhost has been successfully completed
+Backup failed for Site erpnext.localhost. Database or site_config.json may be corrupted
+Traceback with variables (most recent call last):
+  File "apps/frappe/frappe/commands/site.py", line 865, in backup
+    odb = scheduled_backup(
+      context = CliCtxObj(sites=['erpnext.localhost'], force=False, profile=False, verbose=True)
+      with_files = False
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_backup_conf = False
+      verbose = True
+      compress = False
+      include = ''
+      exclude = ''
+      old_backup_metadata = False
+      scheduled_backup = <function scheduled_backup at 0x797bfd5a3920>
+      exit_code = 0
+      rollback_callback = None
+      site = 'erpnext.localhost'
+  File "apps/frappe/frappe/utils/backups.py", line 589, in scheduled_backup
+    return new_backup(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x797bfd4f5ab0>
+  File "apps/frappe/frappe/utils/backups.py", line 626, in new_backup
+    odb = BackupGenerator(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x797bfd4f5ab0>
+  File "apps/frappe/frappe/utils/backups.py", line 89, in __init__
+    self.setup_backup_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x797bfdc2e540>
+      db_name = '_7802180657c0640e'
+      user = '_7802180657c0640e'
+      password = ********
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      db_socket = None
+      db_host = '127.0.0.1'
+      db_port = 3306
+      db_type = 'mariadb'
+      backup_path_conf = None
+      ignore_conf = False
+      compress_files = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x797bfd4f5ab0>
+      site = 'erpnext.localhost'
+  File "apps/frappe/frappe/utils/backups.py", line 126, in setup_backup_tables
+    self._set_existing_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x797bfdc2e540>
+  File "apps/frappe/frappe/utils/backups.py", line 122, in _set_existing_tables
+    self._existing_tables = frappe.db.get_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x797bfdc2e540>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 486, in get_tables
+    .run(pluck=True)
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x797bfd4caf90>
+      cached = True
+      to_query = True
+      tables = None
+      information_schema = <pypika.queries.Schema object at 0x797bfd4f5c40>
+  File "apps/frappe/frappe/query_builder/utils.py", line 80, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+      query = 'SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`=%(param1)s'
+      args = ()
+      kwargs = {'pluck': True}
+      child_queries = []
+      params = {'param1': '_7802180657c0640e'}
+  File "apps/frappe/frappe/database/database.py", line 237, in sql
+    self.connect()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x797bfd4caf90>
+      query = 'SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`=%(param1)s'
+      values = {'param1': '_7802180657c0640e'}
+      as_dict = 0
+      as_list = 0
+      debug = False
+      ignore_ddl = 0
+      auto_commit = 0
+      update = None
+      explain = False
+      run = True
+      pluck = True
+      as_iterator = False
+      query_type = 'select'
+  File "apps/frappe/frappe/database/database.py", line 135, in connect
+    self.get_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x797bfd4caf90>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 106, in get_connection
+    conn = self._get_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x797bfd4caf90>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 112, in _get_connection
+    return self.create_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x797bfd4caf90>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 115, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x797bfd4caf90>
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+      self = <pymysql.connections.Connection object at 0x797c0036a270>
+      user = '_7802180657c0640e'
+      password = ********
+      host = '127.0.0.1'
+      database = '_7802180657c0640e'
+      unix_socket = None
+      port = 3306
+      charset = 'utf8mb4'
+      collation = 'utf8mb4_unicode_ci'
+      sql_mode = None
+      read_default_file = None
+      conv = {<class 'bool'>: <function escape_bool at 0x797bfd43f380>, <class 'int'>: <function escape_int at 0x797bfd43f420>, <class 'float'>: <function escape_float at 0x797bfd43f4c0>, <class 'str'>: <function escape_str at 0x797bfd43f740>, <class 'bytes'>: <function escape_bytes at 0x797bfd43f6a0>, <class 'tuple'>: <function escape_sequence at 0x797bfd43f240>, <class 'list'>: <function escape_sequence at 0x797bfd43f240>, <class 'set'>: <function escape_sequence at 0x797bfd43f240>, <class 'frozenset'>: <function escape_sequence at 0x797bfd43f240>, <class 'dict'>: <function escape_dict at 0x797bfd43f1a0>, <class 'NoneType'>: <function escape_None at 0x797bfd43f7e0>, <class 'datetime.date'>: <function escape_date at 0x797bfd43fa60>, <class 'datetime.datetime'>: <function escape_datetime at 0x797bfd43f9c0>, <class 'datetime.timedelta'>: <function escape_timedelta at 0x797bfd43f880>, <class 'datetime.time'>: <function escape_time at 0x797bfd43f920>, <class 'time.struct_time'>: <function escape_struc...
+      use_unicode = True
+      client_flag = 3842573
+      cursorclass = <class 'pymysql.cursors.Cursor'>
+      init_command = None
+      connect_timeout = 10
+      read_default_group = None
+      autocommit = False
+      local_infile = False
+      max_allowed_packet = 16777216
+      defer_connect = False
+      auth_plugin_map = None
+      read_timeout = None
+      write_timeout = None
+      bind_address = None
+      binary_prefix = False
+      program_name = None
+      server_public_key = ********
+      ssl = None
+      ssl_ca = None
+      ssl_cert = None
+      ssl_disabled = None
+      ssl_key = ********
+      ssl_key_password = ********
+      ssl_verify_cert = None
+      ssl_verify_identity = None
+      compress = None
+      named_pipe = None
+      passwd = ********
+      db = None
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+      self = <pymysql.connections.Connection object at 0x797c0036a270>
+      sock = None
+      kwargs = {}
+      exc = OperationalError(2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+Backup failed for Site erpnext.localhost. Database or site_config.json may be corrupted
+Traceback with variables (most recent call last):
+  File "apps/frappe/frappe/commands/site.py", line 865, in backup
+    odb = scheduled_backup(
+      context = CliCtxObj(sites=['erpnext.localhost'], force=False, profile=False, verbose=True)
+      with_files = False
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_backup_conf = False
+      verbose = True
+      compress = False
+      include = ''
+      exclude = ''
+      old_backup_metadata = False
+      scheduled_backup = <function scheduled_backup at 0x70251ee1f920>
+      exit_code = 0
+      rollback_callback = None
+      site = 'erpnext.localhost'
+  File "apps/frappe/frappe/utils/backups.py", line 589, in scheduled_backup
+    return new_backup(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x70251dc31ed0>
+  File "apps/frappe/frappe/utils/backups.py", line 626, in new_backup
+    odb = BackupGenerator(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x70251dc31ed0>
+  File "apps/frappe/frappe/utils/backups.py", line 89, in __init__
+    self.setup_backup_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x70251f947e60>
+      db_name = '_7802180657c0640e'
+      user = '_7802180657c0640e'
+      password = ********
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      db_socket = None
+      db_host = '127.0.0.1'
+      db_port = 3306
+      db_type = 'mariadb'
+      backup_path_conf = None
+      ignore_conf = False
+      compress_files = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x70251dc31ed0>
+      site = 'erpnext.localhost'
+  File "apps/frappe/frappe/utils/backups.py", line 126, in setup_backup_tables
+    self._set_existing_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x70251f947e60>
+  File "apps/frappe/frappe/utils/backups.py", line 122, in _set_existing_tables
+    self._existing_tables = frappe.db.get_tables()
+      self = <frappe.utils.backups.BackupGenerator object at 0x70251f947e60>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 486, in get_tables
+    .run(pluck=True)
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x70251dc0b3e0>
+      cached = True
+      to_query = True
+      tables = None
+      information_schema = <pypika.queries.Schema object at 0x70251dc32090>
+  File "apps/frappe/frappe/query_builder/utils.py", line 80, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+      query = 'SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`=%(param1)s'
+      args = ()
+      kwargs = {'pluck': True}
+      child_queries = []
+      params = {'param1': '_7802180657c0640e'}
+  File "apps/frappe/frappe/database/database.py", line 237, in sql
+    self.connect()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x70251dc0b3e0>
+      query = 'SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`=%(param1)s'
+      values = {'param1': '_7802180657c0640e'}
+      as_dict = 0
+      as_list = 0
+      debug = False
+      ignore_ddl = 0
+      auto_commit = 0
+      update = None
+      explain = False
+      run = True
+      pluck = True
+      as_iterator = False
+      query_type = 'select'
+  File "apps/frappe/frappe/database/database.py", line 135, in connect
+    self.get_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x70251dc0b3e0>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 106, in get_connection
+    conn = self._get_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x70251dc0b3e0>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 112, in _get_connection
+    return self.create_connection()
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x70251dc0b3e0>
+  File "apps/frappe/frappe/database/mariadb/database.py", line 115, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+      self = <frappe.database.mariadb.database.MariaDBDatabase object at 0x70251dc0b3e0>
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+      self = <pymysql.connections.Connection object at 0x70251f04a870>
+      user = '_7802180657c0640e'
+      password = ********
+      host = '127.0.0.1'
+      database = '_7802180657c0640e'
+      unix_socket = None
+      port = 3306
+      charset = 'utf8mb4'
+      collation = 'utf8mb4_unicode_ci'
+      sql_mode = None
+      read_default_file = None
+      conv = {<class 'bool'>: <function escape_bool at 0x70251dd83380>, <class 'int'>: <function escape_int at 0x70251dd83420>, <class 'float'>: <function escape_float at 0x70251dd834c0>, <class 'str'>: <function escape_str at 0x70251dd83740>, <class 'bytes'>: <function escape_bytes at 0x70251dd836a0>, <class 'tuple'>: <function escape_sequence at 0x70251dd83240>, <class 'list'>: <function escape_sequence at 0x70251dd83240>, <class 'set'>: <function escape_sequence at 0x70251dd83240>, <class 'frozenset'>: <function escape_sequence at 0x70251dd83240>, <class 'dict'>: <function escape_dict at 0x70251dd831a0>, <class 'NoneType'>: <function escape_None at 0x70251dd837e0>, <class 'datetime.date'>: <function escape_date at 0x70251dd83a60>, <class 'datetime.datetime'>: <function escape_datetime at 0x70251dd839c0>, <class 'datetime.timedelta'>: <function escape_timedelta at 0x70251dd83880>, <class 'datetime.time'>: <function escape_time at 0x70251dd83920>, <class 'time.struct_time'>: <function escape_struc...
+      use_unicode = True
+      client_flag = 3842573
+      cursorclass = <class 'pymysql.cursors.Cursor'>
+      init_command = None
+      connect_timeout = 10
+      read_default_group = None
+      autocommit = False
+      local_infile = False
+      max_allowed_packet = 16777216
+      defer_connect = False
+      auth_plugin_map = None
+      read_timeout = None
+      write_timeout = None
+      bind_address = None
+      binary_prefix = False
+      program_name = None
+      server_public_key = ********
+      ssl = None
+      ssl_ca = None
+      ssl_cert = None
+      ssl_disabled = None
+      ssl_key = ********
+      ssl_key_password = ********
+      ssl_verify_cert = None
+      ssl_verify_identity = None
+      compress = None
+      named_pipe = None
+      passwd = ********
+      db = None
+  File "env/lib/python3.12/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+      self = <pymysql.connections.Connection object at 0x70251f04a870>
+      sock = None
+      kwargs = {}
+      exc = OperationalError(2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+set -o pipefail; /usr/bin/mariadb-dump --user=_7802180657c0640e --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _7802180657c0640e | /usr/bin/gzip >> ./erpnext.localhost/private/backups/20250501_120002-erpnext_localhost-database.sql.gz
+
+Backup Summary for erpnext.localhost at 2025-05-01 12:00:04.539579
+Config  : /home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/sites/erpnext.localhost/private/backups/20250501_120002-erpnext_localhost-site_config_backup.json 127.0B
+Database: /home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/sites/erpnext.localhost/private/backups/20250501_120002-erpnext_localhost-database.sql.gz 787.3KiB
+Backup for Site erpnext.localhost has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_7802180657c0640e --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _7802180657c0640e | /usr/bin/gzip >> ./erpnext.localhost/private/backups/20250501_180003-erpnext_localhost-database.sql.gz
+
+Backup Summary for erpnext.localhost at 2025-05-01 18:00:06.187876
+Config  : /home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/sites/erpnext.localhost/private/backups/20250501_180003-erpnext_localhost-site_config_backup.json 127.0B
+Database: /home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/sites/erpnext.localhost/private/backups/20250501_180003-erpnext_localhost-database.sql.gz 793.1KiB
+Backup for Site erpnext.localhost has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_7802180657c0640e --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _7802180657c0640e | /usr/bin/gzip >> ./erpnext.localhost/private/backups/20250502_120002-erpnext_localhost-database.sql.gz
+
+Backup Summary for erpnext.localhost at 2025-05-02 12:00:04.994166
+Config  : /home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/sites/erpnext.localhost/private/backups/20250502_120002-erpnext_localhost-site_config_backup.json 149.0B
+Database: /home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/sites/erpnext.localhost/private/backups/20250502_120002-erpnext_localhost-database.sql.gz 799.7KiB
+Backup for Site erpnext.localhost has been successfully completed

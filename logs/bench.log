@@ -35,3 +35,131 @@
 2025-04-28 11:48:08,371 INFO /home/raven/.local/bin/bench worker
 2025-04-28 11:48:08,401 INFO /home/raven/.local/bin/bench watch
 2025-04-28 11:48:08,409 INFO /home/raven/.local/bin/bench schedule
+2025-04-28 12:00:01,432 INFO /home/raven/.local/bin/bench --verbose --site all backup
+2025-04-28 18:00:02,656 INFO /home/raven/.local/bin/bench --verbose --site all backup
+2025-04-30 12:00:01,481 INFO /home/raven/.local/bin/bench --verbose --site all backup
+2025-05-01 09:47:51,490 INFO /home/raven/.local/bin/bench start
+2025-05-01 09:47:51,975 INFO /home/raven/.local/bin/bench serve --port 8000
+2025-05-01 09:47:51,978 INFO /home/raven/.local/bin/bench watch
+2025-05-01 09:47:51,981 INFO /home/raven/.local/bin/bench schedule
+2025-05-01 09:47:51,985 INFO /home/raven/.local/bin/bench worker
+2025-05-01 09:49:28,361 INFO /home/raven/.local/bin/bench start
+2025-05-01 09:49:28,754 INFO /home/raven/.local/bin/bench worker
+2025-05-01 09:49:28,785 INFO /home/raven/.local/bin/bench serve --port 8000
+2025-05-01 09:49:28,794 INFO /home/raven/.local/bin/bench watch
+2025-05-01 09:49:28,828 INFO /home/raven/.local/bin/bench schedule
+2025-05-01 10:12:08,627 INFO /home/raven/.local/bin/bench start
+2025-05-01 10:13:45,166 INFO /home/raven/.local/bin/bench start
+2025-05-01 10:13:45,601 INFO /home/raven/.local/bin/bench schedule
+2025-05-01 10:13:45,604 INFO /home/raven/.local/bin/bench watch
+2025-05-01 10:13:45,626 INFO /home/raven/.local/bin/bench worker
+2025-05-01 10:13:45,632 INFO /home/raven/.local/bin/bench serve --port 8000
+2025-05-01 10:16:59,359 INFO /home/raven/.local/bin/bench stop
+2025-05-01 10:17:30,470 INFO /home/raven/.local/bin/bench start
+2025-05-01 10:17:30,848 INFO /home/raven/.local/bin/bench watch
+2025-05-01 10:17:30,859 INFO /home/raven/.local/bin/bench schedule
+2025-05-01 10:17:30,863 INFO /home/raven/.local/bin/bench serve --port 8000
+2025-05-01 10:17:30,871 INFO /home/raven/.local/bin/bench worker
+2025-05-01 10:18:37,858 INFO /home/raven/.local/bin/bench start
+2025-05-01 10:18:38,233 INFO /home/raven/.local/bin/bench serve --port 8000
+2025-05-01 10:18:38,252 INFO /home/raven/.local/bin/bench worker
+2025-05-01 10:18:38,252 INFO /home/raven/.local/bin/bench schedule
+2025-05-01 10:18:38,264 INFO /home/raven/.local/bin/bench watch
+2025-05-01 10:20:19,184 INFO /home/raven/.local/bin/bench start
+2025-05-01 10:20:19,565 INFO /home/raven/.local/bin/bench worker
+2025-05-01 10:20:19,570 INFO /home/raven/.local/bin/bench schedule
+2025-05-01 10:20:19,572 INFO /home/raven/.local/bin/bench serve --port 8000
+2025-05-01 10:20:19,582 INFO /home/raven/.local/bin/bench watch
+2025-05-01 10:21:41,735 INFO /home/raven/.local/bin/bench start
+2025-05-01 10:21:42,132 INFO /home/raven/.local/bin/bench watch
+2025-05-01 10:21:42,132 INFO /home/raven/.local/bin/bench serve --port 8000
+2025-05-01 10:21:42,151 INFO /home/raven/.local/bin/bench worker
+2025-05-01 10:21:42,152 INFO /home/raven/.local/bin/bench schedule
+2025-05-01 10:22:24,967 INFO /home/raven/.local/bin/bench start --log-level DEBUG
+2025-05-01 10:22:24,986 WARNING /home/raven/.local/bin/bench start --log-level DEBUG executed with exit code 2
+2025-05-01 10:22:37,664 INFO /home/raven/.local/bin/bench start --help
+2025-05-01 10:22:47,451 INFO /home/raven/.local/bin/bench start
+2025-05-01 10:22:47,815 INFO /home/raven/.local/bin/bench serve --port 8000
+2025-05-01 10:22:47,822 INFO /home/raven/.local/bin/bench watch
+2025-05-01 10:22:47,823 INFO /home/raven/.local/bin/bench schedule
+2025-05-01 10:22:47,839 INFO /home/raven/.local/bin/bench worker
+2025-05-01 10:24:37,711 INFO /home/raven/.local/bin/bench start --no-reload
+2025-05-01 10:24:37,721 WARNING /home/raven/.local/bin/bench start --no-reload executed with exit code 2
+2025-05-01 10:24:44,421 INFO /home/raven/.local/bin/bench doctor
+2025-05-01 10:25:17,937 INFO /home/raven/.local/bin/bench --logs
+2025-05-01 10:25:23,763 INFO /home/raven/.local/bin/bench start --workers
+2025-05-01 10:25:23,774 WARNING /home/raven/.local/bin/bench start --workers executed with exit code 2
+2025-05-01 10:25:30,804 INFO /home/raven/.local/bin/bench start redis-cache
+2025-05-01 10:25:30,820 WARNING /home/raven/.local/bin/bench start redis-cache executed with exit code 2
+2025-05-01 10:25:32,260 INFO /home/raven/.local/bin/bench start redis-queue
+2025-05-01 10:25:32,280 WARNING /home/raven/.local/bin/bench start redis-queue executed with exit code 2
+2025-05-01 10:25:33,718 INFO /home/raven/.local/bin/bench start web
+2025-05-01 10:25:33,744 WARNING /home/raven/.local/bin/bench start web executed with exit code 2
+2025-05-01 10:25:41,890 INFO /home/raven/.local/bin/bench start redis-cache
+2025-05-01 10:25:41,900 WARNING /home/raven/.local/bin/bench start redis-cache executed with exit code 2
+2025-05-01 10:25:42,456 INFO /home/raven/.local/bin/bench start redis-queue
+2025-05-01 10:25:42,467 WARNING /home/raven/.local/bin/bench start redis-queue executed with exit code 2
+2025-05-01 10:25:43,758 INFO /home/raven/.local/bin/bench start web
+2025-05-01 10:25:43,771 WARNING /home/raven/.local/bin/bench start web executed with exit code 2
+2025-05-01 10:25:46,900 INFO /home/raven/.local/bin/bench start
+2025-05-01 10:25:47,316 INFO /home/raven/.local/bin/bench watch
+2025-05-01 10:25:47,320 INFO /home/raven/.local/bin/bench schedule
+2025-05-01 10:25:47,329 INFO /home/raven/.local/bin/bench serve --port 8000
+2025-05-01 10:25:47,358 INFO /home/raven/.local/bin/bench worker
+2025-05-01 10:26:54,747 INFO /home/raven/.local/bin/bench --version
+2025-05-01 10:28:01,520 INFO /home/raven/.local/bin/bench start
+2025-05-01 10:28:01,876 INFO /home/raven/.local/bin/bench watch
+2025-05-01 10:28:01,887 INFO /home/raven/.local/bin/bench worker
+2025-05-01 10:28:01,889 INFO /home/raven/.local/bin/bench serve --port 8000
+2025-05-01 10:28:01,904 INFO /home/raven/.local/bin/bench schedule
+2025-05-01 10:30:12,839 INFO /home/raven/.local/bin/bench worker
+2025-05-01 10:30:12,846 INFO /home/raven/.local/bin/bench schedule
+2025-05-01 10:30:12,847 INFO /home/raven/.local/bin/bench serve --port 8000
+2025-05-01 10:30:12,847 INFO /home/raven/.local/bin/bench watch
+2025-05-01 10:32:05,426 INFO /home/raven/.local/bin/bench start
+2025-05-01 10:32:05,783 INFO /home/raven/.local/bin/bench watch
+2025-05-01 10:32:05,789 INFO /home/raven/.local/bin/bench worker
+2025-05-01 10:32:05,795 INFO /home/raven/.local/bin/bench serve --port 8000
+2025-05-01 10:32:53,152 INFO /home/raven/.local/bin/bench start
+2025-05-01 10:32:53,584 INFO /home/raven/.local/bin/bench watch
+2025-05-01 10:32:53,607 INFO /home/raven/.local/bin/bench serve --port 8000
+2025-05-01 10:32:53,610 INFO /home/raven/.local/bin/bench worker
+2025-05-01 12:00:01,572 INFO /home/raven/.local/bin/bench --verbose --site all backup
+2025-05-01 12:46:29,364 INFO /home/raven/.local/bin/bench start
+2025-05-01 12:46:29,858 INFO /home/raven/.local/bin/bench worker
+2025-05-01 12:46:29,859 INFO /home/raven/.local/bin/bench serve --port 8000
+2025-05-01 12:46:29,865 INFO /home/raven/.local/bin/bench watch
+2025-05-01 13:18:58,384 INFO /home/raven/.local/bin/bench start
+2025-05-01 13:18:58,836 INFO /home/raven/.local/bin/bench serve --port 8000
+2025-05-01 13:18:58,837 INFO /home/raven/.local/bin/bench watch
+2025-05-01 13:18:58,857 INFO /home/raven/.local/bin/bench worker
+2025-05-01 14:34:59,452 INFO /home/raven/.local/bin/bench start
+2025-05-01 14:34:59,938 INFO /home/raven/.local/bin/bench serve --port 8000
+2025-05-01 14:34:59,941 INFO /home/raven/.local/bin/bench worker
+2025-05-01 14:34:59,954 INFO /home/raven/.local/bin/bench watch
+2025-05-01 18:00:01,831 INFO /home/raven/.local/bin/bench --verbose --site all backup
+2025-05-01 18:42:23,585 INFO /home/raven/.local/bin/bench start
+2025-05-01 18:42:24,127 INFO /home/raven/.local/bin/bench watch
+2025-05-01 18:42:24,141 INFO /home/raven/.local/bin/bench worker
+2025-05-01 18:42:24,180 INFO /home/raven/.local/bin/bench serve --port 8000
+2025-05-02 08:23:44,833 INFO /home/raven/.local/bin/bench start
+2025-05-02 08:23:45,293 INFO /home/raven/.local/bin/bench serve --port 8000
+2025-05-02 08:23:45,308 INFO /home/raven/.local/bin/bench worker
+2025-05-02 08:23:45,316 INFO /home/raven/.local/bin/bench watch
+2025-05-02 08:55:59,558 INFO /home/raven/.local/bin/bench start
+2025-05-02 08:56:00,063 INFO /home/raven/.local/bin/bench serve --port 8000
+2025-05-02 08:56:00,064 INFO /home/raven/.local/bin/bench watch
+2025-05-02 08:56:00,078 INFO /home/raven/.local/bin/bench worker
+2025-05-02 08:58:27,523 INFO /home/raven/.local/bin/bench start
+2025-05-02 08:58:27,913 INFO /home/raven/.local/bin/bench serve --port 8000
+2025-05-02 08:58:27,916 INFO /home/raven/.local/bin/bench watch
+2025-05-02 08:58:27,916 INFO /home/raven/.local/bin/bench worker
+2025-05-02 11:49:12,565 INFO /home/raven/.local/bin/bench start
+2025-05-02 11:49:13,026 INFO /home/raven/.local/bin/bench worker
+2025-05-02 11:49:13,034 INFO /home/raven/.local/bin/bench watch
+2025-05-02 11:49:13,047 INFO /home/raven/.local/bin/bench serve --port 8000
+2025-05-02 11:53:38,870 INFO /home/raven/.local/bin/bench start
+2025-05-02 11:53:39,296 INFO /home/raven/.local/bin/bench serve --port 8000
+2025-05-02 11:53:39,296 INFO /home/raven/.local/bin/bench watch
+2025-05-02 11:53:39,305 INFO /home/raven/.local/bin/bench worker
+2025-05-02 12:00:01,766 INFO /home/raven/.local/bin/bench --verbose --site all backup
