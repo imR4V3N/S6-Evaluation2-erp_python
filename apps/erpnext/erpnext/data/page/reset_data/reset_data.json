@@ -1,0 +1,19 @@
+{
+ "content": null,
+ "creation": "2025-05-02 11:37:49.899110",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2025-05-02 11:39:28.126884",
+ "modified_by": "Administrator",
+ "module": "data",
+ "name": "reset-data",
+ "owner": "Administrator",
+ "page_name": "reset-data",
+ "roles": [],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "Reset"
+}

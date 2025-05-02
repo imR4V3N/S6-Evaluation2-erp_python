@@ -1,0 +1,51 @@
+2025-05-01 16:34:25,544 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'item_idx': '1', 'docs': '{"docstatus":0,"doctype":"Request for Quotation","name":"new-request-for-quotation-lnejglebeh","__islocal":1,"__unsaved":1,"owner":"antonio.rajaonarimino@gmail.com","naming_series":"PUR-RFQ-.YYYY.-","company":"IT University","transaction_date":"2025-05-01","status":"Draft","suppliers":[{"docstatus":0,"doctype":"Request for Quotation Supplier","name":"new-request-for-quotation-supplier-zgisoumjlq","__islocal":1,"__unsaved":1,"owner":"antonio.rajaonarimino@gmail.com","quote_status":"Pending","send_email":1,"email_sent":0,"parent":"new-request-for-quotation-lnejglebeh","parentfield":"suppliers","parenttype":"Request for Quotation","idx":1,"supplier_name":"Yas","supplier":"Yas","contact":null,"email_id":null}],"items":[{"docstatus":0,"doctype":"Request for Quotation Item","name":"new-request-for-quotation-item-mbdajdhsqx","__islocal":1,"__unsaved":1,"owner":"antonio.rajaonarimino@gmail.com","schedule_date":"2025-05-01","stock_uom":"Nos","page_break":0,"parent":"new-request-for-quotation-lnejglebeh","parentfield":"items","parenttype":"Request for Quotation","idx":1,"item_code":"EAU001"}],"send_attached_files":1,"send_document_print":0,"message_for_supplier":"<div class=\\"ql-editor read-mode\\"><p><font style=\\"vertical-align: inherit;\\"><font style=\\"vertical-align: inherit;\\">Veuillez fournir les articles spécifiés aux meilleurs tarifs possibles</font></font></p></div>","billing_address":"","billing_address_display":""}', 'method': 'process_item_selection', 'args': '{"item_idx":1}', 'cmd': 'run_doc_method'}
+2025-05-01 17:13:45,552 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'item_idx': '1', 'docs': '{"docstatus":0,"doctype":"Request for Quotation","name":"new-request-for-quotation-efyuqdpjcg","__islocal":1,"__unsaved":1,"owner":"antonio.rajaonarimino@gmail.com","naming_series":"PUR-RFQ-.YYYY.-","company":"IT University","transaction_date":"2025-05-01","status":"Draft","suppliers":[{"docstatus":0,"doctype":"Request for Quotation Supplier","name":"new-request-for-quotation-supplier-olcacnmwqj","__islocal":1,"__unsaved":1,"owner":"antonio.rajaonarimino@gmail.com","quote_status":"Pending","send_email":1,"email_sent":0,"parent":"new-request-for-quotation-efyuqdpjcg","parentfield":"suppliers","parenttype":"Request for Quotation","idx":1}],"items":[{"docstatus":0,"doctype":"Request for Quotation Item","name":"new-request-for-quotation-item-vmgzqtwbho","__islocal":1,"__unsaved":1,"owner":"antonio.rajaonarimino@gmail.com","schedule_date":"2025-05-01","stock_uom":"Nos","page_break":0,"parent":"new-request-for-quotation-efyuqdpjcg","parentfield":"items","parenttype":"Request for Quotation","idx":1,"item_code":"EAU001"}],"send_attached_files":1,"send_document_print":0,"message_for_supplier":"Please supply the specified items at the best possible rates","billing_address":"","billing_address_display":""}', 'method': 'process_item_selection', 'args': '{"item_idx":1}', 'cmd': 'run_doc_method'}
+2025-05-01 20:38:42,654 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {}
+2025-05-01 20:41:21,961 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'payment_type': 'Pay', 'party_type': 'Supplier', 'party': 'Yas', 'amount': 2.0, 'reference_no': 'Référence paiement pour ACC-PINV-2025-00002', 'payment_account': 'Cash Account', 'payment_date': '2025-05-01'}
+2025-05-02 09:12:00,505 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'name': 'Home', 'public': '1', 'new_widgets': '{}', 'blocks': '[{"id":"kb3XPLg8lb","type":"header","data":{"text":"<span class=\\"h4\\"><b>Your Shortcuts</b></span>","col":12}},{"id":"nWd2KJPW8l","type":"shortcut","data":{"shortcut_name":"Item","col":3}},{"id":"snrzfbFr5Y","type":"shortcut","data":{"shortcut_name":"Customer","col":3}},{"id":"SHJKakmLLf","type":"shortcut","data":{"shortcut_name":"Supplier","col":3}},{"id":"CPxEyhaf3G","type":"shortcut","data":{"shortcut_name":"Sales Invoice","col":3}},{"id":"d_KVM1gsf9","type":"spacer","data":{"col":12}},{"id":"JVu8-FJZCu","type":"header","data":{"text":"<span class=\\"h4\\"><b>Reports &amp; Masters</b></span>","col":12}},{"id":"JiuSi0ubOg","type":"card","data":{"card_name":"Accounting","col":4}},{"id":"ji2Jlm3Q8i","type":"card","data":{"card_name":"Stock","col":4}},{"id":"N61oiXpuwK","type":"card","data":{"card_name":"CRM","col":4}},{"id":"6J0CVl1mPo","type":"card","data":{"card_name":"Data Import and Settings","col":4}}]', 'cmd': 'frappe.desk.doctype.workspace.workspace.save_page'}
+2025-05-02 10:12:36,167 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'item_idx': '1', 'docs': '{"docstatus":0,"doctype":"Request for Quotation","name":"new-request-for-quotation-achqwisviv","__islocal":1,"__unsaved":1,"owner":"antonio.rajaonarimino@gmail.com","naming_series":"PUR-RFQ-.YYYY.-","company":"IT University","transaction_date":"2025-05-02","status":"Draft","suppliers":[{"docstatus":0,"doctype":"Request for Quotation Supplier","name":"new-request-for-quotation-supplier-ulgtfsgzvu","__islocal":1,"__unsaved":1,"owner":"antonio.rajaonarimino@gmail.com","quote_status":"Pending","send_email":1,"email_sent":0,"parent":"new-request-for-quotation-achqwisviv","parentfield":"suppliers","parenttype":"Request for Quotation","idx":1}],"items":[{"docstatus":0,"doctype":"Request for Quotation Item","name":"new-request-for-quotation-item-zrhobtusdq","__islocal":1,"__unsaved":1,"owner":"antonio.rajaonarimino@gmail.com","schedule_date":"2025-05-02","stock_uom":"Nos","page_break":0,"parent":"new-request-for-quotation-achqwisviv","parentfield":"items","parenttype":"Request for Quotation","idx":1,"item_code":"EAU001"}],"send_attached_files":1,"send_document_print":0,"message_for_supplier":"Please supply the specified items at the best possible rates","billing_address":"","billing_address_display":""}', 'method': 'process_item_selection', 'args': '{"item_idx":1}', 'cmd': 'run_doc_method'}
+2025-05-02 10:13:31,742 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'doctype': 'Item', 'name': 'new-item-dndroghbbj', 'cmd': 'frappe.realtime.has_permission'}
+2025-05-02 10:23:16,333 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'doctype': 'Purchase Order', 'name': 'new-purchase-order-lyybpxtbae', 'cmd': 'frappe.realtime.has_permission'}
+2025-05-02 10:25:46,770 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'doctype': 'Supplier Quotation', 'name': 'new-supplier-quotation-lhowfstmmx', 'cmd': 'frappe.realtime.has_permission'}
+2025-05-02 10:26:44,564 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'doctype': 'Supplier Quotation', 'name': 'new-supplier-quotation-pindnhzszn', 'cmd': 'frappe.realtime.has_permission'}
+2025-05-02 10:35:06,761 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'doctype': 'Supplier Quotation', 'name': 'new-supplier-quotation-oucztpitmg', 'cmd': 'frappe.realtime.has_permission'}
+2025-05-02 11:07:33,544 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'fields': ['name', 'supplier_name', 'supplier_type', 'supplier_group', 'creation', 'modified', 'contact_display', 'contact_email', 'contact_mobile'], 'limit_page_length': 20}
+2025-05-02 11:30:18,298 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'docs': '{"name":"Customize Form","owner":"antonio.rajaonarimino@gmail.com","docstatus":0,"idx":0,"grid_page_length":0,"istable":0,"is_calendar_and_gantt":0,"editable_grid":0,"quick_entry":1,"track_changes":0,"track_views":0,"allow_auto_repeat":0,"allow_import":0,"queue_in_background":0,"naming_rule":"","max_attachments":0,"allow_copy":0,"make_attachments_public":0,"protect_attached_files":0,"show_title_field_in_link":0,"translated_doctype":0,"force_re_route_to_default_view":0,"show_preview_popup":0,"email_append_to":0,"sort_order":"ASC","doctype":"Customize Form","actions":[],"links":[],"states":[],"fields":[],"__last_sync_on":"2025-05-02T08:30:17.029Z","doc_type":"Page"}', 'method': 'fetch_to_customize', 'cmd': 'run_doc_method'}
+2025-05-02 11:39:03,327 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'new_page': '{"content":"[{\\"type\\":\\"header\\",\\"data\\":{\\"text\\":\\"Reset data\\"}}]","name":"Reset data","label":"Reset data","title":"Reset data","public":1,"for_user":"","icon":"refresh","parent_page":"Data","is_editable":true,"selected":true,"app":"erpnext","type":"Link","link_type":"Page","link_to":"reset-data"}', 'cmd': 'frappe.desk.doctype.workspace.workspace.new_page'}
+2025-05-02 11:40:09,158 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'new_page': '{"content":"[{\\"type\\":\\"header\\",\\"data\\":{\\"text\\":\\"Reset data\\"}}]","name":"Reset data","label":"Reset data","title":"Reset data","public":1,"for_user":"","icon":"delete-active","parent_page":"Data","is_editable":true,"selected":true,"app":"erpnext","type":"Link","link_type":"Page","link_to":"reset-data"}', 'cmd': 'frappe.desk.doctype.workspace.workspace.new_page'}
+2025-05-02 12:00:13,090 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'name': 'resetsuccess', 'cmd': 'frappe.desk.desk_page.getpage'}
+2025-05-02 12:02:11,374 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'name': 'resetsuccess', 'cmd': 'frappe.desk.desk_page.getpage'}
