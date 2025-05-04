@@ -374,3 +374,9 @@ Backup Summary for erpnext.localhost at 2025-05-02 12:00:04.994166
 Config  : /home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/sites/erpnext.localhost/private/backups/20250502_120002-erpnext_localhost-site_config_backup.json 149.0B
 Database: /home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/sites/erpnext.localhost/private/backups/20250502_120002-erpnext_localhost-database.sql.gz 799.7KiB
 Backup for Site erpnext.localhost has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_7802180657c0640e --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _7802180657c0640e | /usr/bin/gzip >> ./erpnext.localhost/private/backups/20250503_180003-erpnext_localhost-database.sql.gz
+
+Backup Summary for erpnext.localhost at 2025-05-03 18:00:06.438058
+Config  : /home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/sites/erpnext.localhost/private/backups/20250503_180003-erpnext_localhost-site_config_backup.json 149.0B
+Database: /home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/sites/erpnext.localhost/private/backups/20250503_180003-erpnext_localhost-database.sql.gz 805.2KiB
+Backup for Site erpnext.localhost has been successfully completed
