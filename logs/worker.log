@@ -1544,3 +1544,361 @@ Error 111 connecting to 127.0.0.1:11000. Connection refused.
 2025-05-02 11:53:40,422 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
 2025-05-02 11:53:40,424 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
 2025-05-02 11:53:40,425 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-02 15:33:53,215 Worker rq:worker:40553a7ec94e4c97a75d646f03c21267 started with PID 9237, version 2.3.2
+2025-05-02 15:33:53,216 Subscribing to channel rq:pubsub:40553a7ec94e4c97a75d646f03c21267
+2025-05-02 15:33:53,219 *** Listening on home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long...
+2025-05-02 15:33:53,219 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-02 15:33:53,222 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-02 15:33:53,223 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-02 15:47:23,381 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-02 15:47:23,411 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-02 15:47:23,414 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-02 16:00:53,561 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-02 16:00:53,565 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-02 16:00:53,567 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-02 16:14:23,669 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-02 16:14:23,673 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-02 16:14:23,676 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-02 16:27:53,806 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-02 16:27:53,812 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-02 16:27:53,815 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-02 16:41:23,955 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-02 16:41:23,958 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-02 16:41:23,960 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-02 16:54:54,041 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-02 16:54:54,044 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-02 16:54:54,046 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-02 17:08:24,186 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-02 17:08:24,240 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-02 17:08:24,242 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-02 17:21:54,281 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-02 17:21:54,285 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-02 17:21:54,288 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-02 17:35:24,432 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-02 17:35:24,435 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-02 17:35:24,437 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-02 17:36:02,735 Worker 40553a7ec94e4c97a75d646f03c21267 [PID 9237]: warm shut down requested
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 357, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/retry.py", line 62, in call_with_retry
+    return do()
+           ^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 358, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 730, in _connect
+    raise err
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 718, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/bench_helper.py", line 48, in invoke
+    return super().invoke(ctx)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/click/core.py", line 1697, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/click/core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/click/core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/commands/scheduler.py", line 206, in start_worker
+    start_worker(
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/background_jobs.py", line 350, in start_worker
+    worker.work(
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 649, in work
+    self.teardown()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 1150, in teardown
+    self.register_death()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 897, in register_death
+    p.execute()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/client.py", line 1524, in execute
+    conn = self.connection_pool.get_connection("MULTI", self.shard_hint)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 1422, in get_connection
+    connection.connect()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 363, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:11000. Connection refused.
+
+Error 111 connecting to 127.0.0.1:11000. Connection refused.
+2025-05-03 15:28:36,725 Worker rq:worker:be8bc2b6fb3c4ca3a52958a2aa56e5bb started with PID 7276, version 2.3.2
+2025-05-03 15:28:36,725 Subscribing to channel rq:pubsub:be8bc2b6fb3c4ca3a52958a2aa56e5bb
+2025-05-03 15:28:36,728 *** Listening on home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long...
+2025-05-03 15:28:36,729 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-03 15:28:36,731 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-03 15:28:36,733 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-03 15:42:06,963 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-03 15:42:07,024 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-03 15:42:07,030 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-03 15:55:37,059 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-03 15:55:37,071 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-03 15:55:37,073 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-03 16:09:07,190 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-03 16:09:07,196 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-03 16:09:07,198 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-03 16:22:37,368 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-03 16:22:37,370 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-03 16:22:37,372 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-03 16:36:07,502 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-03 16:36:07,505 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-03 16:36:07,508 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-03 16:49:37,569 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-03 16:49:37,575 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-03 16:49:37,577 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-03 17:03:07,633 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-03 17:03:07,635 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-03 17:03:07,637 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-03 17:16:37,784 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-03 17:16:37,786 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-03 17:16:37,789 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-03 17:30:07,920 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-03 17:30:07,923 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-03 17:30:07,924 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-03 17:43:38,082 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-03 17:43:38,084 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-03 17:43:38,086 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-03 17:57:08,138 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-03 17:57:08,141 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-03 17:57:08,143 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-03 18:10:38,213 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-03 18:10:38,217 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-03 18:10:38,219 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-03 18:24:08,355 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-03 18:24:08,368 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-03 18:24:08,371 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-03 18:37:38,505 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-03 18:37:38,516 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-03 18:37:38,518 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-03 18:51:08,661 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-03 18:51:08,664 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-03 18:51:08,666 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-03 19:04:38,715 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-03 19:04:38,718 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-03 19:04:38,721 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-03 19:05:23,433 Worker be8bc2b6fb3c4ca3a52958a2aa56e5bb [PID 7276]: warm shut down requested
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 357, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/retry.py", line 62, in call_with_retry
+    return do()
+           ^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 358, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 730, in _connect
+    raise err
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 718, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/bench_helper.py", line 48, in invoke
+    return super().invoke(ctx)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/click/core.py", line 1697, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/click/core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/click/core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/commands/scheduler.py", line 206, in start_worker
+    start_worker(
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/background_jobs.py", line 350, in start_worker
+    worker.work(
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 649, in work
+    self.teardown()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 1150, in teardown
+    self.register_death()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 897, in register_death
+    p.execute()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/client.py", line 1524, in execute
+    conn = self.connection_pool.get_connection("MULTI", self.shard_hint)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 1422, in get_connection
+    connection.connect()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 363, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:11000. Connection refused.
+
+Error 111 connecting to 127.0.0.1:11000. Connection refused.
+2025-05-04 09:12:19,642 Worker rq:worker:e6eb6f661e674b3387533d69f216abb1 started with PID 5973, version 2.3.2
+2025-05-04 09:12:19,642 Subscribing to channel rq:pubsub:e6eb6f661e674b3387533d69f216abb1
+2025-05-04 09:12:19,646 *** Listening on home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long...
+2025-05-04 09:12:19,646 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-04 09:12:19,649 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-04 09:12:19,650 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-04 09:25:49,765 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-04 09:25:49,786 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-04 09:25:49,788 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-04 09:39:19,921 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-04 09:39:19,944 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-04 09:39:19,949 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-04 09:52:49,990 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-04 09:52:50,017 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-04 09:52:50,022 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-04 10:06:20,137 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-04 10:06:20,142 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-04 10:06:20,144 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-04 10:19:50,264 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-04 10:19:50,266 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-04 10:19:50,269 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-04 10:33:20,409 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-04 10:33:20,411 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-04 10:33:20,414 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-04 10:39:12,338 home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Supplier Quotation', 'name': 'PUR-SQTN-2025-00002-1'}, method='frappe.model.delete_doc.delete_dynamic_links', site='erpnext.localhost', user='Administrator') (erpnext.localhost||61ba652b-f35a-44a5-b077-3bc1de63d9af)
+2025-05-04 10:39:13,593 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Supplier Quotation', 'name': 'PUR-SQTN-2025-00002-1'}, method='frappe.model.delete_doc.delete_dynamic_links', site='erpnext.localhost', user='Administrator') job in 0:00:00.108270s on worker e6eb6f661e674b3387533d69f216abb1
+2025-05-04 10:39:13,593 home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default: Job OK (erpnext.localhost||61ba652b-f35a-44a5-b077-3bc1de63d9af)
+2025-05-04 10:39:13,593 Result is kept for 600 seconds
+2025-05-04 10:39:13,601 home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Supplier Quotation', 'name': 'PUR-SQTN-2025-00002'}, method='frappe.model.delete_doc.delete_dynamic_links', site='erpnext.localhost', user='Administrator') (erpnext.localhost||4d436e21-beca-4622-929b-65303b52c424)
+2025-05-04 10:39:13,661 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Supplier Quotation', 'name': 'PUR-SQTN-2025-00002'}, method='frappe.model.delete_doc.delete_dynamic_links', site='erpnext.localhost', user='Administrator') job in 0:00:00.051872s on worker e6eb6f661e674b3387533d69f216abb1
+2025-05-04 10:39:13,661 home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default: Job OK (erpnext.localhost||4d436e21-beca-4622-929b-65303b52c424)
+2025-05-04 10:39:13,661 Result is kept for 600 seconds
+2025-05-04 10:39:13,668 home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Supplier Quotation', 'name': 'PUR-SQTN-2025-00001'}, method='frappe.model.delete_doc.delete_dynamic_links', site='erpnext.localhost', user='Administrator') (erpnext.localhost||99ce043d-a7b5-4c96-bd92-a05d82addba0)
+2025-05-04 10:39:13,741 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Supplier Quotation', 'name': 'PUR-SQTN-2025-00001'}, method='frappe.model.delete_doc.delete_dynamic_links', site='erpnext.localhost', user='Administrator') job in 0:00:00.064040s on worker e6eb6f661e674b3387533d69f216abb1
+2025-05-04 10:39:13,741 home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default: Job OK (erpnext.localhost||99ce043d-a7b5-4c96-bd92-a05d82addba0)
+2025-05-04 10:39:13,741 Result is kept for 600 seconds
+2025-05-04 10:45:55,191 home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Supplier Quotation', 'name': 'PUR-SQTN-2025-00001-1'}, method='frappe.model.delete_doc.delete_dynamic_links', site='erpnext.localhost', user='Administrator') (erpnext.localhost||ba71d76e-c4ca-4910-9965-62dbd846d0ca)
+2025-05-04 10:45:55,333 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Supplier Quotation', 'name': 'PUR-SQTN-2025-00001-1'}, method='frappe.model.delete_doc.delete_dynamic_links', site='erpnext.localhost', user='Administrator') job in 0:00:00.120646s on worker e6eb6f661e674b3387533d69f216abb1
+2025-05-04 10:45:55,333 home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default: Job OK (erpnext.localhost||ba71d76e-c4ca-4910-9965-62dbd846d0ca)
+2025-05-04 10:45:55,333 Result is kept for 600 seconds
+2025-05-04 10:45:55,349 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-04 10:45:55,351 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-04 10:45:55,354 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-04 10:45:55,366 home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Supplier Quotation', 'name': 'PUR-SQTN-2025-00001'}, method='frappe.model.delete_doc.delete_dynamic_links', site='erpnext.localhost', user='Administrator') (erpnext.localhost||7aec31cf-d6c4-4e48-9ae5-16c93f10d5e0)
+2025-05-04 10:45:55,482 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Supplier Quotation', 'name': 'PUR-SQTN-2025-00001'}, method='frappe.model.delete_doc.delete_dynamic_links', site='erpnext.localhost', user='Administrator') job in 0:00:00.092636s on worker e6eb6f661e674b3387533d69f216abb1
+2025-05-04 10:45:55,483 home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default: Job OK (erpnext.localhost||7aec31cf-d6c4-4e48-9ae5-16c93f10d5e0)
+2025-05-04 10:45:55,483 Result is kept for 600 seconds
+2025-05-04 10:55:41,851 home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Supplier Quotation', 'name': 'PUR-SQTN-2025-00003-1'}, method='frappe.model.delete_doc.delete_dynamic_links', site='erpnext.localhost', user='Administrator') (erpnext.localhost||9bd2c303-7a34-4458-a7f4-b8d3bf5936c9)
+2025-05-04 10:55:41,951 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Supplier Quotation', 'name': 'PUR-SQTN-2025-00003-1'}, method='frappe.model.delete_doc.delete_dynamic_links', site='erpnext.localhost', user='Administrator') job in 0:00:00.087815s on worker e6eb6f661e674b3387533d69f216abb1
+2025-05-04 10:55:41,951 home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default: Job OK (erpnext.localhost||9bd2c303-7a34-4458-a7f4-b8d3bf5936c9)
+2025-05-04 10:55:41,951 Result is kept for 600 seconds
+2025-05-04 10:55:41,969 home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Supplier Quotation', 'name': 'PUR-SQTN-2025-00003'}, method='frappe.model.delete_doc.delete_dynamic_links', site='erpnext.localhost', user='Administrator') (erpnext.localhost||0a3e9f7e-9138-4197-8490-65ab3807b6ac)
+2025-05-04 10:55:42,119 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Supplier Quotation', 'name': 'PUR-SQTN-2025-00003'}, method='frappe.model.delete_doc.delete_dynamic_links', site='erpnext.localhost', user='Administrator') job in 0:00:00.131186s on worker e6eb6f661e674b3387533d69f216abb1
+2025-05-04 10:55:42,120 home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default: Job OK (erpnext.localhost||0a3e9f7e-9138-4197-8490-65ab3807b6ac)
+2025-05-04 10:55:42,120 Result is kept for 600 seconds
+2025-05-04 11:02:27,152 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-04 11:02:27,157 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-04 11:02:27,159 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-04 11:13:15,811 home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Supplier Quotation', 'name': 'PUR-SQTN-2025-00002-5'}, method='frappe.model.delete_doc.delete_dynamic_links', site='erpnext.localhost', user='Administrator') (erpnext.localhost||04824217-9d65-4529-a505-5123d6c44179)
+2025-05-04 11:13:15,979 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Supplier Quotation', 'name': 'PUR-SQTN-2025-00002-5'}, method='frappe.model.delete_doc.delete_dynamic_links', site='erpnext.localhost', user='Administrator') job in 0:00:00.145439s on worker e6eb6f661e674b3387533d69f216abb1
+2025-05-04 11:13:15,980 home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default: Job OK (erpnext.localhost||04824217-9d65-4529-a505-5123d6c44179)
+2025-05-04 11:13:15,980 Result is kept for 600 seconds
+2025-05-04 11:13:15,992 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-04 11:13:15,995 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-04 11:13:16,003 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-04 11:13:16,007 home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Supplier Quotation', 'name': 'PUR-SQTN-2025-00002-4'}, method='frappe.model.delete_doc.delete_dynamic_links', site='erpnext.localhost', user='Administrator') (erpnext.localhost||1f943f6b-44b2-4a79-9cea-04b818981ff9)
+2025-05-04 11:13:16,154 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Supplier Quotation', 'name': 'PUR-SQTN-2025-00002-4'}, method='frappe.model.delete_doc.delete_dynamic_links', site='erpnext.localhost', user='Administrator') job in 0:00:00.122027s on worker e6eb6f661e674b3387533d69f216abb1
+2025-05-04 11:13:16,155 home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default: Job OK (erpnext.localhost||1f943f6b-44b2-4a79-9cea-04b818981ff9)
+2025-05-04 11:13:16,155 Result is kept for 600 seconds
+2025-05-04 11:13:16,170 home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Supplier Quotation', 'name': 'PUR-SQTN-2025-00002-3'}, method='frappe.model.delete_doc.delete_dynamic_links', site='erpnext.localhost', user='Administrator') (erpnext.localhost||caba9250-e361-45ac-8026-569282bffe37)
+2025-05-04 11:13:16,274 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Supplier Quotation', 'name': 'PUR-SQTN-2025-00002-3'}, method='frappe.model.delete_doc.delete_dynamic_links', site='erpnext.localhost', user='Administrator') job in 0:00:00.092560s on worker e6eb6f661e674b3387533d69f216abb1
+2025-05-04 11:13:16,274 home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default: Job OK (erpnext.localhost||caba9250-e361-45ac-8026-569282bffe37)
+2025-05-04 11:13:16,274 Result is kept for 600 seconds
+2025-05-04 11:13:16,290 home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Supplier Quotation', 'name': 'PUR-SQTN-2025-00002-2'}, method='frappe.model.delete_doc.delete_dynamic_links', site='erpnext.localhost', user='Administrator') (erpnext.localhost||0124a747-1856-4678-8931-4d53275af5af)
+2025-05-04 11:13:16,396 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Supplier Quotation', 'name': 'PUR-SQTN-2025-00002-2'}, method='frappe.model.delete_doc.delete_dynamic_links', site='erpnext.localhost', user='Administrator') job in 0:00:00.086638s on worker e6eb6f661e674b3387533d69f216abb1
+2025-05-04 11:13:16,396 home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default: Job OK (erpnext.localhost||0124a747-1856-4678-8931-4d53275af5af)
+2025-05-04 11:13:16,397 Result is kept for 600 seconds
+2025-05-04 11:13:16,407 home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Supplier Quotation', 'name': 'PUR-SQTN-2025-00002-1'}, method='frappe.model.delete_doc.delete_dynamic_links', site='erpnext.localhost', user='Administrator') (erpnext.localhost||493d2a47-46eb-47d5-ad74-d4bb8529bc60)
+2025-05-04 11:13:16,494 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Supplier Quotation', 'name': 'PUR-SQTN-2025-00002-1'}, method='frappe.model.delete_doc.delete_dynamic_links', site='erpnext.localhost', user='Administrator') job in 0:00:00.072170s on worker e6eb6f661e674b3387533d69f216abb1
+2025-05-04 11:13:16,494 home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default: Job OK (erpnext.localhost||493d2a47-46eb-47d5-ad74-d4bb8529bc60)
+2025-05-04 11:13:16,494 Result is kept for 600 seconds
+2025-05-04 11:13:16,505 home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Supplier Quotation', 'name': 'PUR-SQTN-2025-00002'}, method='frappe.model.delete_doc.delete_dynamic_links', site='erpnext.localhost', user='Administrator') (erpnext.localhost||1c5784a6-9455-4152-abf2-079a94f3cbb1)
+2025-05-04 11:13:16,584 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Supplier Quotation', 'name': 'PUR-SQTN-2025-00002'}, method='frappe.model.delete_doc.delete_dynamic_links', site='erpnext.localhost', user='Administrator') job in 0:00:00.065579s on worker e6eb6f661e674b3387533d69f216abb1
+2025-05-04 11:13:16,585 home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default: Job OK (erpnext.localhost||1c5784a6-9455-4152-abf2-079a94f3cbb1)
+2025-05-04 11:13:16,585 Result is kept for 600 seconds
+2025-05-04 11:14:53,516 home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Supplier Quotation', 'name': 'PUR-SQTN-2025-00002-1'}, method='frappe.model.delete_doc.delete_dynamic_links', site='erpnext.localhost', user='Administrator') (erpnext.localhost||82abcf20-52c1-4749-994c-01dd06e5339a)
+2025-05-04 11:14:53,635 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Supplier Quotation', 'name': 'PUR-SQTN-2025-00002-1'}, method='frappe.model.delete_doc.delete_dynamic_links', site='erpnext.localhost', user='Administrator') job in 0:00:00.104137s on worker e6eb6f661e674b3387533d69f216abb1
+2025-05-04 11:14:53,636 home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default: Job OK (erpnext.localhost||82abcf20-52c1-4749-994c-01dd06e5339a)
+2025-05-04 11:14:53,636 Result is kept for 600 seconds
+2025-05-04 11:14:53,648 home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Supplier Quotation', 'name': 'PUR-SQTN-2025-00002'}, method='frappe.model.delete_doc.delete_dynamic_links', site='erpnext.localhost', user='Administrator') (erpnext.localhost||a670244e-4653-49e2-a44f-95b46d2b437b)
+2025-05-04 11:14:53,761 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Supplier Quotation', 'name': 'PUR-SQTN-2025-00002'}, method='frappe.model.delete_doc.delete_dynamic_links', site='erpnext.localhost', user='Administrator') job in 0:00:00.090285s on worker e6eb6f661e674b3387533d69f216abb1
+2025-05-04 11:14:53,762 home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default: Job OK (erpnext.localhost||a670244e-4653-49e2-a44f-95b46d2b437b)
+2025-05-04 11:14:53,762 Result is kept for 600 seconds
+2025-05-04 11:28:23,906 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-04 11:28:23,908 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-04 11:28:23,909 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-04 11:41:54,033 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-04 11:41:54,035 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-04 11:41:54,037 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-04 11:42:28,196 Worker e6eb6f661e674b3387533d69f216abb1 [PID 5973]: warm shut down requested
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 357, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/retry.py", line 62, in call_with_retry
+    return do()
+           ^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 358, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 730, in _connect
+    raise err
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 718, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/bench_helper.py", line 48, in invoke
+    return super().invoke(ctx)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/click/core.py", line 1697, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/click/core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/click/core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/commands/scheduler.py", line 206, in start_worker
+    start_worker(
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/background_jobs.py", line 350, in start_worker
+    worker.work(
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 649, in work
+    self.teardown()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 1150, in teardown
+    self.register_death()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 897, in register_death
+    p.execute()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/client.py", line 1524, in execute
+    conn = self.connection_pool.get_connection("MULTI", self.shard_hint)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 1422, in get_connection
+    connection.connect()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 363, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:11000. Connection refused.
+
+Error 111 connecting to 127.0.0.1:11000. Connection refused.
+2025-05-04 11:42:35,647 Worker rq:worker:704233170cd448cab0f2a1b7ddbfd623 started with PID 93234, version 2.3.2
+2025-05-04 11:42:35,647 Subscribing to channel rq:pubsub:704233170cd448cab0f2a1b7ddbfd623
+2025-05-04 11:42:35,650 *** Listening on home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long...
+2025-05-04 11:42:35,651 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-04 11:42:35,652 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-04 11:42:35,653 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-04 11:48:39,386 Worker 704233170cd448cab0f2a1b7ddbfd623 [PID 93234]: warm shut down requested
+2025-05-04 11:48:39,389 Unsubscribing from channel rq:pubsub:704233170cd448cab0f2a1b7ddbfd623
+2025-05-04 11:48:42,128 Worker rq:worker:2d0877836c174dd98c80668480a9e269 started with PID 98479, version 2.3.2
+2025-05-04 11:48:42,129 Subscribing to channel rq:pubsub:2d0877836c174dd98c80668480a9e269
+2025-05-04 11:48:42,135 *** Listening on home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long...
+2025-05-04 11:48:42,136 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-04 11:48:42,138 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-04 11:48:42,141 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-04 11:49:46,622 Worker 2d0877836c174dd98c80668480a9e269 [PID 98479]: warm shut down requested
+2025-05-04 11:49:46,623 Unsubscribing from channel rq:pubsub:2d0877836c174dd98c80668480a9e269
