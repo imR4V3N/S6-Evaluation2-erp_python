@@ -1902,3 +1902,664 @@ Error 111 connecting to 127.0.0.1:11000. Connection refused.
 2025-05-04 11:48:42,141 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
 2025-05-04 11:49:46,622 Worker 2d0877836c174dd98c80668480a9e269 [PID 98479]: warm shut down requested
 2025-05-04 11:49:46,623 Unsubscribing from channel rq:pubsub:2d0877836c174dd98c80668480a9e269
+2025-05-05 08:10:28,765 Worker rq:worker:dcd348cde3204f22bf2cdfea5bb079bf started with PID 6546, version 2.3.2
+2025-05-05 08:10:28,766 Subscribing to channel rq:pubsub:dcd348cde3204f22bf2cdfea5bb079bf
+2025-05-05 08:10:28,779 *** Listening on home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long...
+2025-05-05 08:10:28,780 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 08:10:28,783 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 08:10:28,786 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 08:14:24,051 Worker dcd348cde3204f22bf2cdfea5bb079bf [PID 6546]: warm shut down requested
+2025-05-05 08:14:24,053 Unsubscribing from channel rq:pubsub:dcd348cde3204f22bf2cdfea5bb079bf
+2025-05-05 08:25:46,068 Worker rq:worker:e9e013e0e1a848bba9f6c67fb9165acf started with PID 13222, version 2.3.2
+2025-05-05 08:25:46,072 Subscribing to channel rq:pubsub:e9e013e0e1a848bba9f6c67fb9165acf
+2025-05-05 08:25:46,086 *** Listening on home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long...
+2025-05-05 08:25:46,087 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 08:25:46,094 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 08:25:46,100 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 08:29:10,549 Worker e9e013e0e1a848bba9f6c67fb9165acf [PID 13222]: warm shut down requested
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 357, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/retry.py", line 62, in call_with_retry
+    return do()
+           ^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 358, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 730, in _connect
+    raise err
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 718, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/bench_helper.py", line 48, in invoke
+    return super().invoke(ctx)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/click/core.py", line 1697, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/click/core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/click/core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/commands/scheduler.py", line 206, in start_worker
+    start_worker(
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/background_jobs.py", line 350, in start_worker
+    worker.work(
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 649, in work
+    self.teardown()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 1150, in teardown
+    self.register_death()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 897, in register_death
+    p.execute()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/client.py", line 1524, in execute
+    conn = self.connection_pool.get_connection("MULTI", self.shard_hint)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 1422, in get_connection
+    connection.connect()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 363, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:11000. Connection refused.
+
+Error 111 connecting to 127.0.0.1:11000. Connection refused.
+2025-05-05 11:13:40,914 Worker rq:worker:8beba3f3d434486eaa64b1273436e7c9 started with PID 7051, version 2.3.2
+2025-05-05 11:13:40,917 Subscribing to channel rq:pubsub:8beba3f3d434486eaa64b1273436e7c9
+2025-05-05 11:13:40,920 *** Listening on home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long...
+2025-05-05 11:13:40,920 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 11:13:40,923 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 11:13:40,924 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 11:27:11,097 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 11:27:11,154 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 11:27:11,160 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 11:40:41,268 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 11:40:41,271 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 11:40:41,273 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 11:54:11,311 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 11:54:11,345 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 11:54:11,348 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 12:07:41,459 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 12:07:41,463 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 12:07:41,465 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 12:21:11,569 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 12:21:11,572 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 12:21:11,574 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 12:24:25,445 Worker 8beba3f3d434486eaa64b1273436e7c9 [PID 7051]: warm shut down requested
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 357, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/retry.py", line 62, in call_with_retry
+    return do()
+           ^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 358, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 730, in _connect
+    raise err
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 718, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/bench_helper.py", line 48, in invoke
+    return super().invoke(ctx)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/click/core.py", line 1697, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/click/core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/click/core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/commands/scheduler.py", line 206, in start_worker
+    start_worker(
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/background_jobs.py", line 350, in start_worker
+    worker.work(
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 649, in work
+    self.teardown()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 1150, in teardown
+    self.register_death()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 897, in register_death
+    p.execute()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/client.py", line 1524, in execute
+    conn = self.connection_pool.get_connection("MULTI", self.shard_hint)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 1422, in get_connection
+    connection.connect()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 363, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:11000. Connection refused.
+
+Error 111 connecting to 127.0.0.1:11000. Connection refused.
+2025-05-05 13:00:03,361 Worker rq:worker:2bbed1b698d64b8cb0e06f20cde1bf07 started with PID 5220, version 2.3.2
+2025-05-05 13:00:03,362 Subscribing to channel rq:pubsub:2bbed1b698d64b8cb0e06f20cde1bf07
+2025-05-05 13:00:03,368 *** Listening on home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long...
+2025-05-05 13:00:03,369 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 13:00:03,373 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 13:00:03,375 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 13:06:00,015 Worker 2bbed1b698d64b8cb0e06f20cde1bf07 [PID 5220]: warm shut down requested
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 357, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/retry.py", line 62, in call_with_retry
+    return do()
+           ^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 358, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 730, in _connect
+    raise err
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 718, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/bench_helper.py", line 48, in invoke
+    return super().invoke(ctx)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/click/core.py", line 1697, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/click/core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/click/core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/commands/scheduler.py", line 206, in start_worker
+    start_worker(
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/background_jobs.py", line 350, in start_worker
+    worker.work(
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 649, in work
+    self.teardown()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 1150, in teardown
+    self.register_death()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 897, in register_death
+    p.execute()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/client.py", line 1524, in execute
+    conn = self.connection_pool.get_connection("MULTI", self.shard_hint)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 1422, in get_connection
+    connection.connect()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 363, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:11000. Connection refused.
+
+Error 111 connecting to 127.0.0.1:11000. Connection refused.
+2025-05-05 13:32:11,078 Worker rq:worker:81ce2f328af0499884c101fb7b37d858 started with PID 6186, version 2.3.2
+2025-05-05 13:32:11,080 Subscribing to channel rq:pubsub:81ce2f328af0499884c101fb7b37d858
+2025-05-05 13:32:11,094 *** Listening on home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long...
+2025-05-05 13:32:11,095 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 13:32:11,099 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 13:32:11,101 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 13:45:41,260 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 13:45:41,303 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 13:45:41,306 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 13:58:13,958 Worker 81ce2f328af0499884c101fb7b37d858 [PID 6186]: warm shut down requested
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 357, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/retry.py", line 62, in call_with_retry
+    return do()
+           ^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 358, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 730, in _connect
+    raise err
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 718, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/bench_helper.py", line 48, in invoke
+    return super().invoke(ctx)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/click/core.py", line 1697, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/click/core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/click/core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/commands/scheduler.py", line 206, in start_worker
+    start_worker(
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/background_jobs.py", line 350, in start_worker
+    worker.work(
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 649, in work
+    self.teardown()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 1150, in teardown
+    self.register_death()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 897, in register_death
+    p.execute()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/client.py", line 1524, in execute
+    conn = self.connection_pool.get_connection("MULTI", self.shard_hint)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 1422, in get_connection
+    connection.connect()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 363, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:11000. Connection refused.
+
+Error 111 connecting to 127.0.0.1:11000. Connection refused.
+2025-05-05 15:16:55,597 Worker rq:worker:d1889f9b6b5542bca325e313c6ded006 started with PID 6179, version 2.3.2
+2025-05-05 15:16:55,598 Subscribing to channel rq:pubsub:d1889f9b6b5542bca325e313c6ded006
+2025-05-05 15:16:55,612 *** Listening on home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long...
+2025-05-05 15:16:55,614 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 15:16:55,636 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 15:16:55,643 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 15:30:25,731 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 15:30:25,767 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 15:30:25,769 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 15:37:14,696 Worker d1889f9b6b5542bca325e313c6ded006 [PID 6179]: warm shut down requested
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 592, in read_response
+    response = self._parser.read_response(disable_decoding=disable_decoding)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/_parsers/hiredis.py", line 128, in read_response
+    self.read_from_socket()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/_parsers/hiredis.py", line 88, in read_from_socket
+    bufflen = self._sock.recv_into(self._buffer)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/bench_helper.py", line 48, in invoke
+    return super().invoke(ctx)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/click/core.py", line 1697, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/click/core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/click/core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/commands/scheduler.py", line 206, in start_worker
+    start_worker(
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/background_jobs.py", line 350, in start_worker
+    worker.work(
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 649, in work
+    self.teardown()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 1150, in teardown
+    self.register_death()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 897, in register_death
+    p.execute()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/client.py", line 1524, in execute
+    conn = self.connection_pool.get_connection("MULTI", self.shard_hint)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 1422, in get_connection
+    connection.connect()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 369, in connect
+    self.on_connect()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 471, in on_connect
+    self.read_response()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 600, in read_response
+    raise ConnectionError(
+redis.exceptions.ConnectionError: Error while reading from 127.0.0.1:11000 : (104, 'Connection reset by peer')
+
+Error while reading from 127.0.0.1:11000 : (104, 'Connection reset by peer')
+2025-05-05 15:37:20,907 Worker rq:worker:d9aa7815d9f041dabf58b946d6a72749 started with PID 20571, version 2.3.2
+2025-05-05 15:37:20,907 Subscribing to channel rq:pubsub:d9aa7815d9f041dabf58b946d6a72749
+2025-05-05 15:37:20,910 *** Listening on home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long...
+2025-05-05 15:37:20,911 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 15:37:20,912 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 15:37:20,914 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 15:37:33,955 Worker d9aa7815d9f041dabf58b946d6a72749 [PID 20571]: warm shut down requested
+2025-05-05 15:37:33,957 Unsubscribing from channel rq:pubsub:d9aa7815d9f041dabf58b946d6a72749
+2025-05-05 15:37:36,343 Worker rq:worker:191edeb07f2645c8aeeeb03a73ba63d6 started with PID 21092, version 2.3.2
+2025-05-05 15:37:36,343 Subscribing to channel rq:pubsub:191edeb07f2645c8aeeeb03a73ba63d6
+2025-05-05 15:37:36,346 *** Listening on home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long...
+2025-05-05 15:37:36,347 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 15:37:36,349 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 15:37:36,353 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 15:51:06,506 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 15:51:06,509 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 15:51:06,511 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 15:54:52,166 Worker 191edeb07f2645c8aeeeb03a73ba63d6 [PID 21092]: warm shut down requested
+2025-05-05 15:54:52,168 Unsubscribing from channel rq:pubsub:191edeb07f2645c8aeeeb03a73ba63d6
+2025-05-05 15:54:54,675 Worker rq:worker:4ef57ac5547d463ba06be3e2cb4ed48f started with PID 31670, version 2.3.2
+2025-05-05 15:54:54,675 Subscribing to channel rq:pubsub:4ef57ac5547d463ba06be3e2cb4ed48f
+2025-05-05 15:54:54,678 *** Listening on home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long...
+2025-05-05 15:54:54,679 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 15:54:54,680 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 15:54:54,681 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 16:00:37,691 Worker 4ef57ac5547d463ba06be3e2cb4ed48f [PID 31670]: warm shut down requested
+2025-05-05 16:00:37,692 Unsubscribing from channel rq:pubsub:4ef57ac5547d463ba06be3e2cb4ed48f
+2025-05-05 16:00:41,738 Worker rq:worker:a572573ac10f4d4bbfacf7ee0635759d started with PID 34885, version 2.3.2
+2025-05-05 16:00:41,738 Subscribing to channel rq:pubsub:a572573ac10f4d4bbfacf7ee0635759d
+2025-05-05 16:00:41,741 *** Listening on home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long...
+2025-05-05 16:00:41,742 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 16:00:41,744 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 16:00:41,745 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 16:14:11,910 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 16:14:11,962 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 16:14:11,965 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 16:27:42,065 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 16:27:42,098 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 16:27:42,103 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 16:41:12,202 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 16:41:12,225 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 16:41:12,228 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 16:54:42,341 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 16:54:42,351 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 16:54:42,355 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 17:08:12,514 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 17:08:12,516 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 17:08:12,518 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 17:21:42,640 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 17:21:42,643 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 17:21:42,645 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 17:35:12,719 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 17:35:12,732 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 17:35:12,735 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 17:48:42,773 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 17:48:42,783 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 17:48:42,787 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 18:01:59,208 Worker rq:worker:19a933c1a2fb4cfba732cd7b8f8586e0 started with PID 10784, version 2.3.2
+2025-05-05 18:01:59,210 Subscribing to channel rq:pubsub:19a933c1a2fb4cfba732cd7b8f8586e0
+2025-05-05 18:01:59,213 *** Listening on home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long...
+2025-05-05 18:01:59,214 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 18:01:59,216 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 18:01:59,218 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 18:15:29,433 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 18:15:29,549 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 18:15:29,554 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 18:20:44,339 Worker rq:worker:67d5eb52e6d941a481f9ff9fd16b3e50 started with PID 6129, version 2.3.2
+2025-05-05 18:20:44,340 Subscribing to channel rq:pubsub:67d5eb52e6d941a481f9ff9fd16b3e50
+2025-05-05 18:20:44,350 *** Listening on home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long...
+2025-05-05 18:20:44,351 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 18:20:44,353 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 18:20:44,356 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 18:34:14,418 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 18:34:14,420 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 18:34:14,422 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 18:47:44,559 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 18:47:44,561 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 18:47:44,565 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 19:01:14,690 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 19:01:14,695 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 19:01:14,697 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 19:14:44,757 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 19:14:44,770 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 19:14:44,773 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 19:28:14,848 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 19:28:14,862 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 19:28:14,869 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 19:41:44,998 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 19:41:45,004 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 19:41:45,010 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 19:55:15,123 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 19:55:15,125 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 19:55:15,127 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 20:08:45,195 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 20:08:45,196 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 20:08:45,199 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 20:22:15,247 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 20:22:15,251 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 20:22:15,252 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 20:35:45,457 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 20:35:45,459 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 20:35:45,461 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 20:40:35,685 Worker 67d5eb52e6d941a481f9ff9fd16b3e50 [PID 6129]: warm shut down requested
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 357, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/retry.py", line 62, in call_with_retry
+    return do()
+           ^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 358, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 730, in _connect
+    raise err
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 718, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/bench_helper.py", line 48, in invoke
+    return super().invoke(ctx)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/click/core.py", line 1697, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/click/core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/click/core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/commands/scheduler.py", line 206, in start_worker
+    start_worker(
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/background_jobs.py", line 350, in start_worker
+    worker.work(
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 649, in work
+    self.teardown()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 1150, in teardown
+    self.register_death()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 897, in register_death
+    p.execute()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/client.py", line 1524, in execute
+    conn = self.connection_pool.get_connection("MULTI", self.shard_hint)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 1422, in get_connection
+    connection.connect()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 363, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:11000. Connection refused.
+
+Error 111 connecting to 127.0.0.1:11000. Connection refused.
+2025-05-05 20:40:42,321 Worker rq:worker:530c49a47eb14f348eb56d0e99b4cf96 started with PID 112530, version 2.3.2
+2025-05-05 20:40:42,321 Subscribing to channel rq:pubsub:530c49a47eb14f348eb56d0e99b4cf96
+2025-05-05 20:40:42,328 *** Listening on home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long...
+2025-05-05 20:40:42,332 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 20:40:42,334 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 20:40:42,337 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 20:41:44,183 Worker 530c49a47eb14f348eb56d0e99b4cf96 [PID 112530]: warm shut down requested
+2025-05-05 20:41:44,185 Unsubscribing from channel rq:pubsub:530c49a47eb14f348eb56d0e99b4cf96
+2025-05-05 20:41:46,829 Worker rq:worker:f183f37c41b94f6a9689c664b2635ceb started with PID 114311, version 2.3.2
+2025-05-05 20:41:46,829 Subscribing to channel rq:pubsub:f183f37c41b94f6a9689c664b2635ceb
+2025-05-05 20:41:46,832 *** Listening on home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long...
+2025-05-05 20:41:46,833 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 20:41:46,834 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 20:41:46,836 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 20:54:19,821 Worker f183f37c41b94f6a9689c664b2635ceb [PID 114311]: warm shut down requested
+2025-05-05 20:54:19,823 Unsubscribing from channel rq:pubsub:f183f37c41b94f6a9689c664b2635ceb
+2025-05-05 20:54:21,838 Worker rq:worker:d0c1632555ed40f6bbc992caad7e9f00 started with PID 124229, version 2.3.2
+2025-05-05 20:54:21,838 Subscribing to channel rq:pubsub:d0c1632555ed40f6bbc992caad7e9f00
+2025-05-05 20:54:21,842 *** Listening on home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long...
+2025-05-05 20:54:21,843 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 20:54:21,845 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 20:54:21,848 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 20:59:54,796 Worker d0c1632555ed40f6bbc992caad7e9f00 [PID 124229]: warm shut down requested
+2025-05-05 20:59:54,798 Unsubscribing from channel rq:pubsub:d0c1632555ed40f6bbc992caad7e9f00
+2025-05-05 20:59:57,006 Worker rq:worker:9e27d96386484b9999e602297ae63da9 started with PID 129496, version 2.3.2
+2025-05-05 20:59:57,006 Subscribing to channel rq:pubsub:9e27d96386484b9999e602297ae63da9
+2025-05-05 20:59:57,009 *** Listening on home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long...
+2025-05-05 20:59:57,010 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 20:59:57,012 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 20:59:57,013 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 21:06:57,260 Worker 9e27d96386484b9999e602297ae63da9 [PID 129496]: warm shut down requested
+2025-05-05 21:06:57,261 Unsubscribing from channel rq:pubsub:9e27d96386484b9999e602297ae63da9
+2025-05-05 21:06:59,986 Worker rq:worker:7a4715f32c2f4409a936a9062e79c4cc started with PID 134926, version 2.3.2
+2025-05-05 21:06:59,986 Subscribing to channel rq:pubsub:7a4715f32c2f4409a936a9062e79c4cc
+2025-05-05 21:06:59,989 *** Listening on home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long...
+2025-05-05 21:06:59,990 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 21:06:59,991 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 21:06:59,992 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 21:16:42,356 Worker 7a4715f32c2f4409a936a9062e79c4cc [PID 134926]: warm shut down requested
+2025-05-05 21:16:42,358 Unsubscribing from channel rq:pubsub:7a4715f32c2f4409a936a9062e79c4cc
+2025-05-05 21:16:45,163 Worker rq:worker:b99ddd0bbf87434791ffd13b7d1a2fd7 started with PID 142318, version 2.3.2
+2025-05-05 21:16:45,163 Subscribing to channel rq:pubsub:b99ddd0bbf87434791ffd13b7d1a2fd7
+2025-05-05 21:16:45,166 *** Listening on home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long...
+2025-05-05 21:16:45,167 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 21:16:45,168 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 21:16:45,169 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 21:24:23,391 Worker b99ddd0bbf87434791ffd13b7d1a2fd7 [PID 142318]: warm shut down requested
+2025-05-05 21:24:23,392 Unsubscribing from channel rq:pubsub:b99ddd0bbf87434791ffd13b7d1a2fd7
+2025-05-05 21:24:25,976 Worker rq:worker:c438492b673140e8a9f55e40f0197678 started with PID 149242, version 2.3.2
+2025-05-05 21:24:25,977 Subscribing to channel rq:pubsub:c438492b673140e8a9f55e40f0197678
+2025-05-05 21:24:25,980 *** Listening on home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long...
+2025-05-05 21:24:25,980 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 21:24:25,982 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 21:24:25,984 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 21:32:34,959 Worker c438492b673140e8a9f55e40f0197678 [PID 149242]: warm shut down requested
+2025-05-05 21:32:34,961 Unsubscribing from channel rq:pubsub:c438492b673140e8a9f55e40f0197678
+2025-05-05 21:32:39,002 Worker rq:worker:02eb67f4ffb64e9b9339be1e5d1a424a started with PID 157273, version 2.3.2
+2025-05-05 21:32:39,002 Subscribing to channel rq:pubsub:02eb67f4ffb64e9b9339be1e5d1a424a
+2025-05-05 21:32:39,005 *** Listening on home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long...
+2025-05-05 21:32:39,006 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 21:32:39,008 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 21:32:39,010 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 21:35:36,023 Worker 02eb67f4ffb64e9b9339be1e5d1a424a [PID 157273]: warm shut down requested
+2025-05-05 21:35:36,025 Unsubscribing from channel rq:pubsub:02eb67f4ffb64e9b9339be1e5d1a424a
+2025-05-05 21:35:38,516 Worker rq:worker:6a6a18724b6c44a0917b92a8e2eb5b75 started with PID 161391, version 2.3.2
+2025-05-05 21:35:38,517 Subscribing to channel rq:pubsub:6a6a18724b6c44a0917b92a8e2eb5b75
+2025-05-05 21:35:38,520 *** Listening on home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long...
+2025-05-05 21:35:38,520 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 21:35:38,523 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 21:35:38,526 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 21:49:08,588 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 21:49:08,590 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 21:49:08,592 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 22:02:38,721 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 22:02:38,723 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 22:02:38,725 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 22:16:08,803 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 22:16:08,808 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 22:16:08,810 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 22:29:20,592 Worker 6a6a18724b6c44a0917b92a8e2eb5b75 [PID 161391]: warm shut down requested
+2025-05-05 22:29:20,593 Unsubscribing from channel rq:pubsub:6a6a18724b6c44a0917b92a8e2eb5b75
+2025-05-05 22:30:56,375 Worker rq:worker:2fcfa3d7e6d84b3081b4f650b4249dd1 started with PID 206663, version 2.3.2
+2025-05-05 22:30:56,376 Subscribing to channel rq:pubsub:2fcfa3d7e6d84b3081b4f650b4249dd1
+2025-05-05 22:30:56,379 *** Listening on home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long...
+2025-05-05 22:30:56,379 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 22:30:56,381 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 22:30:56,382 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 22:44:26,508 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 22:44:26,510 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 22:44:26,511 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 22:57:56,596 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 22:57:56,598 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 22:57:56,599 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 23:10:19,738 Worker 2fcfa3d7e6d84b3081b4f650b4249dd1 [PID 206663]: warm shut down requested
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 592, in read_response
+    response = self._parser.read_response(disable_decoding=disable_decoding)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/_parsers/hiredis.py", line 128, in read_response
+    self.read_from_socket()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/_parsers/hiredis.py", line 88, in read_from_socket
+    bufflen = self._sock.recv_into(self._buffer)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/bench_helper.py", line 48, in invoke
+    return super().invoke(ctx)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/click/core.py", line 1697, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/click/core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/click/core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/commands/scheduler.py", line 206, in start_worker
+    start_worker(
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/apps/frappe/frappe/utils/background_jobs.py", line 350, in start_worker
+    worker.work(
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 649, in work
+    self.teardown()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 1150, in teardown
+    self.register_death()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/rq/worker.py", line 897, in register_death
+    p.execute()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/client.py", line 1524, in execute
+    conn = self.connection_pool.get_connection("MULTI", self.shard_hint)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 1422, in get_connection
+    connection.connect()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 369, in connect
+    self.on_connect()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 471, in on_connect
+    self.read_response()
+  File "/home/raven/Workspace/Evaluation2/Evaluation2-erp_python/erp-local/env/lib/python3.12/site-packages/redis/connection.py", line 600, in read_response
+    raise ConnectionError(
+redis.exceptions.ConnectionError: Error while reading from 127.0.0.1:11000 : (104, 'Connection reset by peer')
+
+Error while reading from 127.0.0.1:11000 : (104, 'Connection reset by peer')
+2025-05-05 23:11:14,884 Worker rq:worker:5209a867872342a3b4a4be110dcf45d3 started with PID 242333, version 2.3.2
+2025-05-05 23:11:14,884 Subscribing to channel rq:pubsub:5209a867872342a3b4a4be110dcf45d3
+2025-05-05 23:11:14,887 *** Listening on home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default, home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long...
+2025-05-05 23:11:14,888 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 23:11:14,890 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 23:11:14,891 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 23:24:45,001 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 23:24:45,003 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 23:24:45,005 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 23:38:15,124 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 23:38:15,126 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 23:38:15,128 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-05 23:51:45,277 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-05 23:51:45,279 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-05 23:51:45,280 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-06 00:05:15,422 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-06 00:05:15,424 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-06 00:05:15,425 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-06 00:18:45,536 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-06 00:18:45,538 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-06 00:18:45,539 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-06 00:32:15,625 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-06 00:32:15,628 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-06 00:32:15,630 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-06 00:45:45,756 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-06 00:45:45,758 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-06 00:45:45,760 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-06 00:59:15,839 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-06 00:59:15,843 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-06 00:59:15,845 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-06 01:12:45,916 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-06 01:12:45,924 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-06 01:12:45,926 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-06 01:26:16,007 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-06 01:26:16,015 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-06 01:26:16,016 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-06 01:39:46,128 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-06 01:39:46,131 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-06 01:39:46,136 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-06 01:54:54,690 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-06 01:54:54,702 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-06 01:54:54,706 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long
+2025-05-06 02:08:24,777 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:short
+2025-05-06 02:08:24,783 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:default
+2025-05-06 02:08:24,787 Cleaning registries for queue: home-raven-Workspace-Evaluation2-Evaluation2-erp_python-erp-local:long

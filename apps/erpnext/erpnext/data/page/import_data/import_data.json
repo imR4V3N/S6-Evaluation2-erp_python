@@ -1,0 +1,19 @@
+{
+ "content": null,
+ "creation": "2025-05-05 15:22:07.148252",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2025-05-05 15:22:07.148252",
+ "modified_by": "Administrator",
+ "module": "data",
+ "name": "import_data",
+ "owner": "Administrator",
+ "page_name": "import_data",
+ "roles": [],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "Import"
+}
