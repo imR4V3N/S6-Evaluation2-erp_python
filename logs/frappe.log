@@ -133,3 +133,195 @@ Form Dict: {'item_idx': '1', 'docs': '{"docstatus":0,"doctype":"Supplier Quotati
 2025-05-04 11:16:51,420 ERROR frappe New Exception collected in error log
 Site: erpnext.localhost
 Form Dict: {'item_idx': '2', 'docs': '{"name":"PUR-SQTN-2025-00003","owner":"Administrator","creation":"2025-05-04 11:16:16.846055","modified":"2025-05-04 11:16:29.714213","modified_by":"Administrator","docstatus":0,"idx":0,"title":"Yas","naming_series":"PUR-SQTN-.YYYY.-","supplier":"Yas","supplier_name":"Yas","company":"IT University","status":"Draft","transaction_date":"2025-05-04","valid_till":"2025-06-04","currency":"USD","conversion_rate":1,"buying_price_list":"Standard Buying","price_list_currency":"USD","plc_conversion_rate":1,"ignore_pricing_rule":0,"total_qty":2,"total_net_weight":0,"base_total":2,"base_net_total":2,"total":2,"net_total":2,"tax_category":"","base_taxes_and_charges_added":0,"base_taxes_and_charges_deducted":0,"base_total_taxes_and_charges":0,"taxes_and_charges_added":0,"taxes_and_charges_deducted":0,"total_taxes_and_charges":0,"apply_discount_on":"Grand Total","base_discount_amount":0,"additional_discount_percentage":0,"discount_amount":0,"base_grand_total":2,"base_rounding_adjustment":0,"base_rounded_total":2,"base_in_words":"USD Two only.","grand_total":2,"rounding_adjustment":0,"rounded_total":2,"in_words":"USD Two only.","disable_rounded_total":0,"shipping_address":"","shipping_address_display":"","billing_address":"","billing_address_display":"","group_same_items":0,"language":"en","is_subcontracted":0,"doctype":"Supplier Quotation","items":[{"name":"lp87242giu","owner":"Administrator","creation":"2025-05-04 11:16:16.846055","modified":"2025-05-04 11:16:29.714213","modified_by":"Administrator","docstatus":0,"idx":1,"item_code":"EAU001","item_name":"Eau","lead_time_days":0,"is_free_item":0,"description":"<div><p>EAU001</p></div>","item_group":"Consumable","image":"","qty":2,"stock_uom":"Litre","uom":"Acre","conversion_factor":1,"stock_qty":2,"price_list_rate":0,"discount_percentage":0,"discount_amount":0,"distributed_discount_amount":0,"base_price_list_rate":0,"rate":1,"amount":2,"base_rate":1,"base_amount":2,"pricing_rules":"","net_rate":1,"net_amount":2,"base_net_rate":1,"base_net_amount":2,"weight_per_unit":0,"total_weight":0,"warehouse":"Stores - ITU","item_tax_rate":"{}","cost_center":"Main - ITU","page_break":0,"parent":"PUR-SQTN-2025-00003","parentfield":"items","parenttype":"Supplier Quotation","doctype":"Supplier Quotation Item"},{"docstatus":0,"doctype":"Supplier Quotation Item","name":"new-supplier-quotation-item-rzrvzlwjkp","__islocal":1,"__unsaved":1,"owner":"Administrator","is_free_item":0,"stock_uom":"Nos","page_break":0,"parent":"PUR-SQTN-2025-00003","parentfield":"items","parenttype":"Supplier Quotation","idx":2,"__unedited":false,"cost_center":"Main - ITU","item_code":"EAU001"}],"taxes":[],"pricing_rules":[],"__onload":{"make_payment_via_journal_entry":0,"backflush_based_on":"BOM"},"__last_sync_on":"2025-05-04T08:16:30.816Z","__unsaved":1}', 'method': 'process_item_selection', 'args': '{"item_idx":2}', 'cmd': 'run_doc_method'}
+2025-05-05 11:17:46,205 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'doc': '{"owner":"Administrator","docstatus":0,"idx":0,"title":"{supplier_name}","naming_series":"PUR-ORD-.YYYY.-","supplier":"SuperU","supplier_name":"SuperU","transaction_date":"2025-05-05","company":"IT University","apply_tds":0,"is_subcontracted":0,"currency":"USD","conversion_rate":1,"buying_price_list":"Standard Buying","price_list_currency":"USD","plc_conversion_rate":1,"ignore_pricing_rule":0,"total_qty":5,"total_net_weight":0,"base_total":20,"base_net_total":20,"total":20,"net_total":20,"tax_withholding_net_total":30,"base_tax_withholding_net_total":30,"tax_category":"","base_taxes_and_charges_added":0,"base_taxes_and_charges_deducted":0,"base_total_taxes_and_charges":0,"taxes_and_charges_added":0,"taxes_and_charges_deducted":0,"total_taxes_and_charges":0,"base_grand_total":20,"base_rounding_adjustment":0,"base_in_words":"","base_rounded_total":20,"grand_total":20,"rounding_adjustment":0,"rounded_total":20,"disable_rounded_total":0,"in_words":"","advance_paid":0,"apply_discount_on":"Grand Total","base_discount_amount":0,"additional_discount_percentage":0,"discount_amount":0,"status":"Draft","advance_payment_status":"Not Initiated","per_billed":0,"per_received":0,"group_same_items":0,"language":"en","is_internal_supplier":0,"ref_sq":"PUR-SQTN-2025-00004","is_old_subcontracting_flow":0,"doctype":"Purchase Order","items":[{"owner":"Administrator","docstatus":0,"idx":1,"fg_item_qty":1,"item_code":"PR001","item_name":"Sedap","schedule_date":"2025-05-05","item_group":"Consumable","description":"Sedap","image":"","qty":5,"stock_uom":"Gamma","subcontracted_quantity":0,"uom":"Gamma","conversion_factor":1,"stock_qty":5,"price_list_rate":0,"last_purchase_rate":0,"base_price_list_rate":0,"margin_type":"","margin_rate_or_amount":0,"rate_with_margin":0,"discount_percentage":0,"discount_amount":0,"distributed_discount_amount":0,"base_rate_with_margin":0,"rate":4,"amount":20,"base_rate":4,"base_amount":20,"stock_uom_rate":4,"is_free_item":0,"apply_tds":1,"net_rate":4,"net_amount":20,"base_net_rate":4,"base_net_amount":20,"warehouse":"Stores - ITU","actual_qty":0,"company_total_stock":0,"material_request":"MAT-MR-2025-00002","material_request_item":"1osadqnc96","supplier_quotation":"PUR-SQTN-2025-00004","supplier_quotation_item":"26b6spisql","delivered_by_supplier":0,"against_blanket_order":0,"blanket_order_rate":0,"received_qty":0,"returned_qty":0,"billed_amt":0,"expense_account":"5111 - Cost of Goods Sold - ITU","include_exploded_items":0,"weight_per_unit":0,"total_weight":0,"cost_center":"Main - ITU","is_fixed_asset":0,"item_tax_rate":"{}","page_break":0,"parentfield":"items","parenttype":"Purchase Order","doctype":"Purchase Order Item","__islocal":1,"__unsaved":1,"parent":"new-purchase-order-uudtsgbrrc","name":"new-purchase-order-item-kzxtgjnwri"}],"pricing_rules":[],"supplied_items":[],"taxes":[],"payment_schedule":[],"__islocal":1,"__onload":{"load_after_mapping":true},"__unsaved":1,"name":"new-purchase-order-uudtsgbrrc","__last_sync_on":"2025-05-05T08:17:34.446Z"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2025-05-05 11:18:18,328 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'docstatus': 2}
+2025-05-05 11:30:55,675 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'filters': '[["supplier_quotation", "=", "PUR-SQTN-2025-00004"]]', 'fields': ['name', 'status', 'docstatus'], 'limit_page_length': 20}
+2025-05-05 11:34:48,374 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'docstatus': 2}
+2025-05-05 11:47:29,272 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'fields': ['name'], 'filters': '[["supplier_quotation","=","PUR-SQTN-2025-00004"],["status","=","Paid"]]', 'limit_page_length': 20}
+2025-05-05 12:00:15,969 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'fields': ['name'], 'filters': '[["supplier_quotation","=","PUR-SQTN-2025-00004"],["status","=","Paid"]]', 'limit_page_length': 20}
+2025-05-05 12:02:30,156 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'fields': ['name', 'docstatus'], 'filters': '[["supplier_quotation","=","PUR-SQTN-2025-00004"]]', 'limit_page_length': 20}
+2025-05-05 12:15:34,691 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'fields': ['name', 'docstatus'], 'filters': '[["supplier_quotation","=","PUR-SQTN-2025-00004"]]', 'limit_page_length': 20}
+2025-05-05 12:19:10,181 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'fields': ['name', 'supplier_quotation', 'docstatus'], 'limit_page_length': 20}
+2025-05-05 12:23:27,436 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'fields': ['name', 'supplier_quotation', 'docstatus'], 'limit_page_length': 20}
+2025-05-05 13:01:16,499 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'fields': ['name', 'supplier_quotation', 'docstatus'], 'limit_page_length': 20}
+2025-05-05 13:04:17,142 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'fields': ['supplier_quotation'], 'limit_page_length': 20}
+2025-05-05 13:36:14,162 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'fields': ['name'], 'filters': '[["purchase_order","=","PUR-ORD-2025-00002"],["status","=","Paid"]]', 'limit_page_length': 20}
+2025-05-05 13:37:27,835 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'fields': ['name'], 'filters': '[["purchase_order","=","PUR-ORD-2025-00002"],["status","=","Paid"]]', 'limit_page_length': 20}
+2025-05-05 13:42:05,849 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'fields': ['*'], 'limit_page_length': 20}
+2025-05-05 13:46:02,612 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'fields': ['purchase_order'], 'limit_page_length': 20}
+2025-05-05 13:48:29,558 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'fields': ['name', 'purchase_order'], 'limit_page_length': 20}
+2025-05-05 13:48:59,884 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'fields': ['name', 'purchase_receipt'], 'limit_page_length': 20}
+2025-05-05 13:51:42,665 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'docstatus': 2}
+2025-05-05 15:47:42,027 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'form_data': '{"file1":{},"file2":{},"file3":{}}', 'cmd': 'erpnext.data.data_controller.import_data'}
+2025-05-05 15:49:19,435 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'form_data': '{"file1":{},"file2":{},"file3":{}}', 'cmd': 'erpnext.data.data_controller.import_data'}
+2025-05-05 15:50:15,438 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'form_data': '{"file1":{},"file2":{},"file3":{}}', 'cmd': 'erpnext.data.data_controller.import_data'}
+2025-05-05 15:50:37,790 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'form_data': '{"file1":{},"file2":{},"file3":{}}', 'cmd': 'erpnext.data.data_controller.import_data'}
+2025-05-05 15:55:10,836 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'form_data': '{"file1":{},"file2":{},"file3":{}}', 'cmd': 'erpnext.data.data_controller.import_data'}
+2025-05-05 16:33:42,292 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'fields': ['ref_request_quotation'], 'limit_page_length': 20}
+2025-05-05 16:33:48,505 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'fields': ['ref_request_quotation'], 'limit_page_length': 20}
+2025-05-05 16:37:38,186 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'fields': ['ref_request_quotation'], 'limit_page_length': 20}
+2025-05-05 18:39:43,013 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'limit_page_length': 20}
+2025-05-05 20:54:43,016 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'files': '{"file1":{},"file2":{},"file3":{}}', 'cmd': 'erpnext.data.data_controller.import_data'}
+2025-05-05 20:57:52,976 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'files': '{"file1":{},"file2":{},"file3":{}}', 'cmd': 'erpnext.data.data_controller.import_data'}
+2025-05-05 21:07:14,571 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'is_private': '0', 'cmd': 'upload_file'}
+2025-05-05 21:17:11,769 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'file1_url': '/home/raven/Workspace/Evaluation2/Documents/csv/modele/1.csv', 'file2_url': '/home/raven/Workspace/Evaluation2/Documents/csv/modele/2.csv', 'file3_url': '/home/raven/Workspace/Evaluation2/Documents/csv/modele/3.csv', 'cmd': 'erpnext.data.data_controller.import_data'}
+2025-05-05 21:20:36,958 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'is_private': '0', 'cmd': 'upload_file'}
+2025-05-05 21:24:39,417 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'is_private': '0', 'cmd': 'upload_file'}
+2025-05-05 21:27:06,441 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'is_private': '0', 'cmd': 'upload_file'}
+2025-05-05 21:34:13,323 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'file': 'ZGF0ZSxpdGVtX25hbWUsaXRlbV9ncm91cGUscmVxdWlyZWRfYnkscXVhbnRpdHkscHVycG9zZSx0YXJnZXRfd2FyZWhvdXNlLHJlZgowMi8wNS8yMDI1LGJvdWxvbixwaWVjZSwwMi8wNi8yMDI1LDEzLFB1cmNoYXNlLEFsbCBXYXJlaG91c2UsMQowMi8wNS8yMDI1LGNpbWVudCxjb25zb21tYWJsZSwwMi8wNi8yMDI1LDUsUHVyY2hhc2UsQWxsIFdhcmVob3VzZSwy', 'cmd': 'erpnext.data.data_controller.custom_upload_file'}
+2025-05-05 21:35:53,146 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'file1_url': '{"message":"Erreur lors de l\'upload du fichier: Could not find Attached To DocType: Custom Doctype","_server_messages":"[\\"{\\\\\\"message\\\\\\": \\\\\\"Could not find Attached To DocType: Custom Doctype\\\\\\", \\\\\\"title\\\\\\": \\\\\\"Message\\\\\\", \\\\\\"indicator\\\\\\": \\\\\\"red\\\\\\", \\\\\\"raise_exception\\\\\\": 1, \\\\\\"__frappe_exc_id\\\\\\": \\\\\\"194063b19f0adab3e56ff10e259f715b5bcecff16622773ef37dda7c\\\\\\"}\\"]"}', 'file2_url': '{"message":"Erreur lors de l\'upload du fichier: Could not find Attached To DocType: Custom Doctype","_server_messages":"[\\"{\\\\\\"message\\\\\\": \\\\\\"Could not find Attached To DocType: Custom Doctype\\\\\\", \\\\\\"title\\\\\\": \\\\\\"Message\\\\\\", \\\\\\"indicator\\\\\\": \\\\\\"red\\\\\\", \\\\\\"raise_exception\\\\\\": 1, \\\\\\"__frappe_exc_id\\\\\\": \\\\\\"711eb1da40d5df84cbb643d62c462dfd921b39e21e64382a1c37e162\\\\\\"}\\"]"}', 'file3_url': '{"message":"Erreur lors de l\'upload du fichier: Could not find Attached To DocType: Custom Doctype","_server_messages":"[\\"{\\\\\\"message\\\\\\": \\\\\\"Could not find Attached To DocType: Custom Doctype\\\\\\", \\\\\\"title\\\\\\": \\\\\\"Message\\\\\\", \\\\\\"indicator\\\\\\": \\\\\\"red\\\\\\", \\\\\\"raise_exception\\\\\\": 1, \\\\\\"__frappe_exc_id\\\\\\": \\\\\\"582471dc8f3327f796f345317c57aa8b05a40405c2adfdbfd42a1d2e\\\\\\"}\\"]"}', 'cmd': 'erpnext.data.data_controller.import_data'}
+2025-05-05 21:36:16,041 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'file1_url': '{"message":"Erreur lors de l\'upload du fichier: Could not find Attached To DocType: Custom Doctype","_server_messages":"[\\"{\\\\\\"message\\\\\\": \\\\\\"Could not find Attached To DocType: Custom Doctype\\\\\\", \\\\\\"title\\\\\\": \\\\\\"Message\\\\\\", \\\\\\"indicator\\\\\\": \\\\\\"red\\\\\\", \\\\\\"raise_exception\\\\\\": 1, \\\\\\"__frappe_exc_id\\\\\\": \\\\\\"4289d0ee1f1019c2a6a86bfa84cd4a9c1e8ab34756f761f6f57ec96f\\\\\\"}\\"]"}', 'file2_url': '{"message":"Erreur lors de l\'upload du fichier: Could not find Attached To DocType: Custom Doctype","_server_messages":"[\\"{\\\\\\"message\\\\\\": \\\\\\"Could not find Attached To DocType: Custom Doctype\\\\\\", \\\\\\"title\\\\\\": \\\\\\"Message\\\\\\", \\\\\\"indicator\\\\\\": \\\\\\"red\\\\\\", \\\\\\"raise_exception\\\\\\": 1, \\\\\\"__frappe_exc_id\\\\\\": \\\\\\"57754bed3100417780a44d7de0a02d135fa5a690dcac9d0bd0b981de\\\\\\"}\\"]"}', 'file3_url': '{"message":"Erreur lors de l\'upload du fichier: Could not find Attached To DocType: Custom Doctype","_server_messages":"[\\"{\\\\\\"message\\\\\\": \\\\\\"Could not find Attached To DocType: Custom Doctype\\\\\\", \\\\\\"title\\\\\\": \\\\\\"Message\\\\\\", \\\\\\"indicator\\\\\\": \\\\\\"red\\\\\\", \\\\\\"raise_exception\\\\\\": 1, \\\\\\"__frappe_exc_id\\\\\\": \\\\\\"3e1e0f93fd6f4cd94382f6d8f13580470063a3f93e8c0a68f7ea092c\\\\\\"}\\"]"}', 'cmd': 'erpnext.data.data_controller.import_data'}
+2025-05-05 22:13:23,077 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'file1_url': '{"message":"Erreur lors de l\'upload du fichier: Could not find Attached To DocType: Custom Doctype","_server_messages":"[\\"{\\\\\\"message\\\\\\": \\\\\\"Could not find Attached To DocType: Custom Doctype\\\\\\", \\\\\\"title\\\\\\": \\\\\\"Message\\\\\\", \\\\\\"indicator\\\\\\": \\\\\\"red\\\\\\", \\\\\\"raise_exception\\\\\\": 1, \\\\\\"__frappe_exc_id\\\\\\": \\\\\\"a4997145b1b6f3912f72012967be068bf87a5b2d86bfbb4f1c41bc59\\\\\\"}\\"]"}', 'file2_url': '{"message":"Erreur lors de l\'upload du fichier: Could not find Attached To DocType: Custom Doctype","_server_messages":"[\\"{\\\\\\"message\\\\\\": \\\\\\"Could not find Attached To DocType: Custom Doctype\\\\\\", \\\\\\"title\\\\\\": \\\\\\"Message\\\\\\", \\\\\\"indicator\\\\\\": \\\\\\"red\\\\\\", \\\\\\"raise_exception\\\\\\": 1, \\\\\\"__frappe_exc_id\\\\\\": \\\\\\"afbbbdd637aacd724e9f1693f7a28362d1df6a310be7f1d1fb34a875\\\\\\"}\\"]"}', 'file3_url': '{"message":"Erreur lors de l\'upload du fichier: Could not find Attached To DocType: Custom Doctype","_server_messages":"[\\"{\\\\\\"message\\\\\\": \\\\\\"Could not find Attached To DocType: Custom Doctype\\\\\\", \\\\\\"title\\\\\\": \\\\\\"Message\\\\\\", \\\\\\"indicator\\\\\\": \\\\\\"red\\\\\\", \\\\\\"raise_exception\\\\\\": 1, \\\\\\"__frappe_exc_id\\\\\\": \\\\\\"14b02ed9f34addf339357c4504594e122691dd6d1f3e6f7efad29b4c\\\\\\"}\\"]"}', 'cmd': 'erpnext.data.data_controller.import_data'}
+2025-05-05 22:18:52,347 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'file1_url': '/files/imported_file9c9125.csv', 'file2_url': '/files/imported_filea2eb7fa2eb7f.csv', 'file3_url': '/files/imported_file6dcaf06dcaf0.csv', 'cmd': 'erpnext.data.data_controller.import_data'}
+2025-05-05 22:23:27,720 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'file_name': '1.csv', 'file_data': 'ZGF0ZSxpdGVtX25hbWUsaXRlbV9ncm91cGUscmVxdWlyZWRfYnkscXVhbnRpdHkscHVycG9zZSx0YXJnZXRfd2FyZWhvdXNlLHJlZgowMi8wNS8yMDI1LGJvdWxvbixwaWVjZSwwMi8wNi8yMDI1LDEzLFB1cmNoYXNlLEFsbCBXYXJlaG91c2UsMQowMi8wNS8yMDI1LGNpbWVudCxjb25zb21tYWJsZSwwMi8wNi8yMDI1LDUsUHVyY2hhc2UsQWxsIFdhcmVob3VzZSwy', 'is_private': '0', 'cmd': 'erpnext.data.data_controller.custom_upload_file'}
+2025-05-05 22:24:17,160 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'file_name': '1.csv', 'file_data': 'ZGF0ZSxpdGVtX25hbWUsaXRlbV9ncm91cGUscmVxdWlyZWRfYnkscXVhbnRpdHkscHVycG9zZSx0YXJnZXRfd2FyZWhvdXNlLHJlZgowMi8wNS8yMDI1LGJvdWxvbixwaWVjZSwwMi8wNi8yMDI1LDEzLFB1cmNoYXNlLEFsbCBXYXJlaG91c2UsMQowMi8wNS8yMDI1LGNpbWVudCxjb25zb21tYWJsZSwwMi8wNi8yMDI1LDUsUHVyY2hhc2UsQWxsIFdhcmVob3VzZSwy', 'is_private': '0', 'cmd': 'erpnext.data.data_controller.custom_upload_file'}
+2025-05-05 22:26:48,744 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'file_name': '1.csv', 'file_data': 'ZGF0ZSxpdGVtX25hbWUsaXRlbV9ncm91cGUscmVxdWlyZWRfYnkscXVhbnRpdHkscHVycG9zZSx0YXJnZXRfd2FyZWhvdXNlLHJlZgowMi8wNS8yMDI1LGJvdWxvbixwaWVjZSwwMi8wNi8yMDI1LDEzLFB1cmNoYXNlLEFsbCBXYXJlaG91c2UsMQowMi8wNS8yMDI1LGNpbWVudCxjb25zb21tYWJsZSwwMi8wNi8yMDI1LDUsUHVyY2hhc2UsQWxsIFdhcmVob3VzZSwy', 'is_private': '0', 'cmd': 'erpnext.data.data_controller.custom_upload_file'}
+2025-05-05 22:27:32,829 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'file_name': '1.csv', 'file_data': 'ZGF0ZSxpdGVtX25hbWUsaXRlbV9ncm91cGUscmVxdWlyZWRfYnkscXVhbnRpdHkscHVycG9zZSx0YXJnZXRfd2FyZWhvdXNlLHJlZgowMi8wNS8yMDI1LGJvdWxvbixwaWVjZSwwMi8wNi8yMDI1LDEzLFB1cmNoYXNlLEFsbCBXYXJlaG91c2UsMQowMi8wNS8yMDI1LGNpbWVudCxjb25zb21tYWJsZSwwMi8wNi8yMDI1LDUsUHVyY2hhc2UsQWxsIFdhcmVob3VzZSwy', 'is_private': '0', 'cmd': 'erpnext.data.data_controller.custom_upload_file'}
+2025-05-05 22:31:15,905 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'file_name': '1.csv', 'file_data': 'ZGF0ZSxpdGVtX25hbWUsaXRlbV9ncm91cGUscmVxdWlyZWRfYnkscXVhbnRpdHkscHVycG9zZSx0YXJnZXRfd2FyZWhvdXNlLHJlZgowMi8wNS8yMDI1LGJvdWxvbixwaWVjZSwwMi8wNi8yMDI1LDEzLFB1cmNoYXNlLEFsbCBXYXJlaG91c2UsMQowMi8wNS8yMDI1LGNpbWVudCxjb25zb21tYWJsZSwwMi8wNi8yMDI1LDUsUHVyY2hhc2UsQWxsIFdhcmVob3VzZSwy', 'is_private': '0', 'cmd': 'erpnext.data.data_controller.custom_upload_file'}
+2025-05-05 22:32:08,293 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'file_name': '1.csv', 'file_data': 'ZGF0ZSxpdGVtX25hbWUsaXRlbV9ncm91cGUscmVxdWlyZWRfYnkscXVhbnRpdHkscHVycG9zZSx0YXJnZXRfd2FyZWhvdXNlLHJlZgowMi8wNS8yMDI1LGJvdWxvbixwaWVjZSwwMi8wNi8yMDI1LDEzLFB1cmNoYXNlLEFsbCBXYXJlaG91c2UsMQowMi8wNS8yMDI1LGNpbWVudCxjb25zb21tYWJsZSwwMi8wNi8yMDI1LDUsUHVyY2hhc2UsQWxsIFdhcmVob3VzZSwy', 'is_private': '0', 'cmd': 'erpnext.data.data_controller.custom_upload_file'}
+2025-05-05 22:33:25,114 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'file_name': '1.csv', 'file_data': 'ZGF0ZSxpdGVtX25hbWUsaXRlbV9ncm91cGUscmVxdWlyZWRfYnkscXVhbnRpdHkscHVycG9zZSx0YXJnZXRfd2FyZWhvdXNlLHJlZgowMi8wNS8yMDI1LGJvdWxvbixwaWVjZSwwMi8wNi8yMDI1LDEzLFB1cmNoYXNlLEFsbCBXYXJlaG91c2UsMQowMi8wNS8yMDI1LGNpbWVudCxjb25zb21tYWJsZSwwMi8wNi8yMDI1LDUsUHVyY2hhc2UsQWxsIFdhcmVob3VzZSwy', 'is_private': '0', 'cmd': 'erpnext.data.data_controller.upload_file'}
+2025-05-05 22:34:11,950 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'file_name': '1.csv', 'file_data': 'ZGF0ZSxpdGVtX25hbWUsaXRlbV9ncm91cGUscmVxdWlyZWRfYnkscXVhbnRpdHkscHVycG9zZSx0YXJnZXRfd2FyZWhvdXNlLHJlZgowMi8wNS8yMDI1LGJvdWxvbixwaWVjZSwwMi8wNi8yMDI1LDEzLFB1cmNoYXNlLEFsbCBXYXJlaG91c2UsMQowMi8wNS8yMDI1LGNpbWVudCxjb25zb21tYWJsZSwwMi8wNi8yMDI1LDUsUHVyY2hhc2UsQWxsIFdhcmVob3VzZSwy', 'cmd': 'erpnext.data.data_controller.upload_file'}
+2025-05-05 22:34:39,707 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'file_name': '1.csv', 'file_data': 'ZGF0ZSxpdGVtX25hbWUsaXRlbV9ncm91cGUscmVxdWlyZWRfYnkscXVhbnRpdHkscHVycG9zZSx0YXJnZXRfd2FyZWhvdXNlLHJlZgowMi8wNS8yMDI1LGJvdWxvbixwaWVjZSwwMi8wNi8yMDI1LDEzLFB1cmNoYXNlLEFsbCBXYXJlaG91c2UsMQowMi8wNS8yMDI1LGNpbWVudCxjb25zb21tYWJsZSwwMi8wNi8yMDI1LDUsUHVyY2hhc2UsQWxsIFdhcmVob3VzZSwy', 'cmd': 'erpnext.data.data_controller.upload_file'}
+2025-05-05 22:41:23,759 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'file_name': '1.csv', 'file_data': 'ZGF0ZSxpdGVtX25hbWUsaXRlbV9ncm91cGUscmVxdWlyZWRfYnkscXVhbnRpdHkscHVycG9zZSx0YXJnZXRfd2FyZWhvdXNlLHJlZgowMi8wNS8yMDI1LGJvdWxvbixwaWVjZSwwMi8wNi8yMDI1LDEzLFB1cmNoYXNlLEFsbCBXYXJlaG91c2UsMQowMi8wNS8yMDI1LGNpbWVudCxjb25zb21tYWJsZSwwMi8wNi8yMDI1LDUsUHVyY2hhc2UsQWxsIFdhcmVob3VzZSwy', 'cmd': 'erpnext.data.data_controller.upload_file'}
+2025-05-05 22:42:09,564 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'file_name': '1.csv', 'file_data': 'ZGF0ZSxpdGVtX25hbWUsaXRlbV9ncm91cGUscmVxdWlyZWRfYnkscXVhbnRpdHkscHVycG9zZSx0YXJnZXRfd2FyZWhvdXNlLHJlZgowMi8wNS8yMDI1LGJvdWxvbixwaWVjZSwwMi8wNi8yMDI1LDEzLFB1cmNoYXNlLEFsbCBXYXJlaG91c2UsMQowMi8wNS8yMDI1LGNpbWVudCxjb25zb21tYWJsZSwwMi8wNi8yMDI1LDUsUHVyY2hhc2UsQWxsIFdhcmVob3VzZSwy', 'cmd': 'erpnext.data.data_controller.upload_file'}
+2025-05-05 23:07:19,332 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'file_name': '1.csv', 'file_data': 'ZGF0ZSxpdGVtX25hbWUsaXRlbV9ncm91cGUscmVxdWlyZWRfYnkscXVhbnRpdHkscHVycG9zZSx0YXJnZXRfd2FyZWhvdXNlLHJlZgowMi8wNS8yMDI1LGJvdWxvbixwaWVjZSwwMi8wNi8yMDI1LDEzLFB1cmNoYXNlLEFsbCBXYXJlaG91c2UsMQowMi8wNS8yMDI1LGNpbWVudCxjb25zb21tYWJsZSwwMi8wNi8yMDI1LDUsUHVyY2hhc2UsQWxsIFdhcmVob3VzZSwy', 'cmd': 'erpnext.data.data_controller.upload_file'}
+2025-05-05 23:09:09,047 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'cmd': 'erpnext.data.data_controller.upload_file'}
+2025-05-05 23:09:33,938 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'file_name': 'nom', 'file_data': 'data', 'cmd': 'erpnext.data.data_controller.upload_file'}
+2025-05-05 23:11:47,672 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'file_name': '1.csv', 'file_data': 'ZGF0ZSxpdGVtX25hbWUsaXRlbV9ncm91cGUscmVxdWlyZWRfYnkscXVhbnRpdHkscHVycG9zZSx0YXJnZXRfd2FyZWhvdXNlLHJlZgowMi8wNS8yMDI1LGJvdWxvbixwaWVjZSwwMi8wNi8yMDI1LDEzLFB1cmNoYXNlLEFsbCBXYXJlaG91c2UsMQowMi8wNS8yMDI1LGNpbWVudCxjb25zb21tYWJsZSwwMi8wNi8yMDI1LDUsUHVyY2hhc2UsQWxsIFdhcmVob3VzZSwy', 'cmd': 'erpnext.data.data_controller.upload_file'}
+2025-05-06 00:48:10,630 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'fields': ['*'], 'limit_page_length': 20}
+2025-05-06 00:51:05,116 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'doc': '{"docstatus":0,"doctype":"Supplier","name":"new-supplier-aypmhqttni","__islocal":1,"__unsaved":1,"owner":"Administrator","naming_series":"SUP-.YYYY.-","country":"Madagascar","supplier_type":"Company","is_transporter":0,"is_internal_supplier":0,"companies":[],"language":"en","accounts":[],"allow_purchase_invoice_creation_without_purchase_order":0,"allow_purchase_invoice_creation_without_purchase_receipt":0,"is_frozen":0,"disabled":0,"warn_rfqs":0,"warn_pos":0,"prevent_rfqs":0,"prevent_pos":0,"on_hold":0,"hold_type":"","portal_users":[],"__run_link_triggers":1,"supplier_name":"Supplier"}', 'cmd': 'frappe.client.save'}
+2025-05-06 02:00:51,067 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'doctypes': '["Item","Supplier","Material Request","Request for Quotation","Supplier Quotation","Purchase Order","Purchase Invoice","Purchase Receipt","Stock Entry","GL Entry","Payment Entry","Communication","Activity Log","File","ToDo","Workflow Action"]', 'cmd': 'erpnext.data.data_controller.reset_data'}
+2025-05-06 02:05:33,322 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'cmd': 'erpnext.data.data_controller.import_data'}
+2025-05-06 02:07:43,308 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'cmd': 'erpnext.data.data_controller.import_data'}
+2025-05-06 02:08:53,262 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'cmd': 'erpnext.data.data_controller.import_data'}
+2025-05-06 02:11:48,191 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'cmd': 'erpnext.data.data_controller.import_data'}
+2025-05-06 02:13:51,950 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'source_name': 'PUR-RFQ-2025-00006', 'for_supplier': 'Sanifer', 'cmd': 'erpnext.buying.doctype.request_for_quotation.request_for_quotation.make_supplier_quotation_from_rfq'}
+2025-05-06 02:14:55,077 ERROR frappe New Exception collected in error log
+Site: erpnext.localhost
+Form Dict: {'source_name': 'PUR-RFQ-2025-00006', 'for_supplier': 'Sanifer', 'cmd': 'erpnext.buying.doctype.request_for_quotation.request_for_quotation.make_supplier_quotation_from_rfq'}
