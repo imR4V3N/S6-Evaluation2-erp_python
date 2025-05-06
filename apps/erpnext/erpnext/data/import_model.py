@@ -280,6 +280,22 @@ def create_request_for_quotation(material_requests, quotation_suppliers):
         for _, quotation in quotations.items():
             quotation.insert(ignore_permissions=True)
             quotation.submit()
+            # Supplier Quotation creation from each RFQ + supplier
+            for supplier_entry in quotation.suppliers:
+                supplier_quotation = frappe.get_doc({
+                    "doctype": "Supplier Quotation",
+                    "supplier": supplier_entry.supplier,
+                    "rfq": quotation.name,
+                    "items": [
+                        {
+                            "item_code": item.item_code,
+                            "qty": item.qty,
+                            "rate": 0.0  # Default rate
+                        } for item in quotation.items
+                    ],
+                    "docstatus": 0,  # Draft status
+                })
+                supplier_quotation.insert(ignore_permissions=True)
 
         if errors:
             frappe.throw(
@@ -315,7 +331,8 @@ def fill_blank_suppliers(suppliers):
         updated.setdefault('supplier_group', random.choice(supplier_groups))
         updated.setdefault('tax_id', "AB1234567")  # e.g., AB1234567
         # fake.bothify(text='??#######')
-        updated.setdefault('default_currency', random.choice(currencies))
+        updated.setdefault('default_currency', 'USD')
+        # updated.setdefault('default_currency', random.choice(currencies))
 
         updated_suppliers.append(updated)
 
