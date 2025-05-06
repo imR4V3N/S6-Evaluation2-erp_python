@@ -70,6 +70,7 @@ def create_material_requests(quotations_dict):
         valid_warehouses = {w["name"] for w in frappe.get_all("Warehouse", fields=["name"])}
         valid_purposes = {"Sales", "Purchase", "Transfer"}  # Adjust based on your use case        
         valid_item_groups = set(frappe.db.get_all("Item Group", pluck="name"))
+        valid_items = set(frappe.db.get_all("Item", pluck="name"))
 
         quotations = {}
         errors = []
@@ -130,9 +131,7 @@ def create_material_requests(quotations_dict):
 
 
                 # Validation
-                if not item_name:
-                    raise Exception("Missing 'item_name'")
-
+            
                 if not item_group:
                     raise Exception(f"Invalid or missing 'item_group': {item_group}")
                 
@@ -170,15 +169,25 @@ def create_material_requests(quotations_dict):
 
                 # Create Material Request Item (or similar)
                 # You can adapt this block if you're creating something else
+
+                if not item_name:
+                    raise Exception(f"Invalid or missing 'item_name': {item_name}")
+                
+                if item_name not in valid_items:
+                    try : 
+                        frappe.get_doc({
+                            "doctype": "Item",
+                            "item_code": item_name,
+                            "item_name": item_name,
+                            "item_group": item_group,
+                            "stock_uom": "Nos",  # Mandatory field - change if needed
+                            "is_stock_item": 1   # Optional but commonly set
+                        }).insert(ignore_permissions=True)
+                        valid_items.add(item_name)
+                    except Exception as e:
+                        raise Exception(f"Failed to create missing item_name '{item_name}': {str(e)}")
+                
                 frappe.msgprint(f"Creation", title=None, indicator=None)
-                frappe.get_doc({
-                    "doctype": "Item",
-                    "item_code": item_name,
-                    "item_name": item_name,
-                    "item_group": item_group,
-                    "stock_uom": "Nos",  # Mandatory field - change if needed
-                    "is_stock_item": 1   # Optional but commonly set
-                }).insert(ignore_permissions=True)
 
 
                 quotations[ref].append("items", {
@@ -196,8 +205,9 @@ def create_material_requests(quotations_dict):
 
         frappe.msgprint(f"{quotations}", title=None, indicator=None)
         for _, quotation in quotations.items():
-            quotation.insert(ignore_permissions=True)
-            quotation.submit()
+            if len(quotation.items) > 0 :
+                quotation.insert(ignore_permissions=True)
+                quotation.submit()
 
         if errors:
             frappe.throw(
@@ -270,6 +280,22 @@ def create_request_for_quotation(material_requests, quotation_suppliers):
         for _, quotation in quotations.items():
             quotation.insert(ignore_permissions=True)
             quotation.submit()
+            # Supplier Quotation creation from each RFQ + supplier
+            for supplier_entry in quotation.suppliers:
+                supplier_quotation = frappe.get_doc({
+                    "doctype": "Supplier Quotation",
+                    "supplier": supplier_entry.supplier,
+                    "rfq": quotation.name,
+                    "items": [
+                        {
+                            "item_code": item.item_code,
+                            "qty": item.qty,
+                            "rate": 0.0  # Default rate
+                        } for item in quotation.items
+                    ],
+                    "docstatus": 0,  # Draft status
+                })
+                supplier_quotation.insert(ignore_permissions=True)
 
         if errors:
             frappe.throw(
@@ -305,7 +331,8 @@ def fill_blank_suppliers(suppliers):
         updated.setdefault('supplier_group', random.choice(supplier_groups))
         updated.setdefault('tax_id', "AB1234567")  # e.g., AB1234567
         # fake.bothify(text='??#######')
-        updated.setdefault('default_currency', random.choice(currencies))
+        updated.setdefault('default_currency', 'USD')
+        # updated.setdefault('default_currency', random.choice(currencies))
 
         updated_suppliers.append(updated)
 
@@ -340,4 +367,3 @@ def read_csv_file_as_dict(file_storage):
         return list(reader)
     except Exception as e:
         frappe.throw(f"Failed to read uploaded CSV file: {str(e)}")
-        
