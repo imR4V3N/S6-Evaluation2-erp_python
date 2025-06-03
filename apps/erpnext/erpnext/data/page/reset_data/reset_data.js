@@ -12,22 +12,13 @@ frappe.pages['reset-data'].on_page_load = function(wrapper) {
 			<form id="reset-form">
 				<div class="checkbox-grid">
 					<label><input type="checkbox" id="select-all" /> <strong>All</strong></label><br>
-					<label><input type="checkbox" name="doctypes" value="Item" /> Item</label>
-					<label><input type="checkbox" name="doctypes" value="Supplier" /> Supplier</label>
-					<label><input type="checkbox" name="doctypes" value="Material Request" /> Material Request</label>
-					<label><input type="checkbox" name="doctypes" value="Request for Quotation" /> Request for Quotation</label>
-					<label><input type="checkbox" name="doctypes" value="Supplier Quotation" /> Supplier Quotation</label>
-					<label><input type="checkbox" name="doctypes" value="Purchase Order" /> Purchase Order</label>
-					<label><input type="checkbox" name="doctypes" value="Purchase Invoice" /> Purchase Invoice</label>
-					<label><input type="checkbox" name="doctypes" value="Purchase Receipt" /> Purchase Receipt</label>
-					<label><input type="checkbox" name="doctypes" value="Stock Entry" /> Stock Entry</label>
-					<label><input type="checkbox" name="doctypes" value="GL Entry" /> GL Entry</label>
-					<label><input type="checkbox" name="doctypes" value="Payment Entry" /> Payment Entry</label>
-					<label><input type="checkbox" name="doctypes" value="Communication" /> Communication</label>
-					<label><input type="checkbox" name="doctypes" value="Activity Log" /> Activity Log</label>
-					<label><input type="checkbox" name="doctypes" value="File" /> File</label>
-					<label><input type="checkbox" name="doctypes" value="ToDo" /> ToDo</label>
-					<label><input type="checkbox" name="doctypes" value="Workflow Action" /> Workflow Action</label>
+					<label><input type="checkbox" name="doctypes" value="Salary Slip" /> Salary Slip</label>
+					<label><input type="checkbox" name="doctypes" value="Salary Structure Assignment" /> Salary Structure Assignment</label>
+					<label><input type="checkbox" name="doctypes" value="Salary Structure" /> Salary Structure</label>
+					<label><input type="checkbox" name="doctypes" value="Salary Component" /> Salary Component</label>
+					<label><input type="checkbox" name="doctypes" value="Employee" /> Employee</label>
+					<label><input type="checkbox" name="doctypes" value="Company" /> Company</label>
+
 				</div>
 				<button type="submit" class="btn btn-danger">Reset Selected</button>
 			</form>
