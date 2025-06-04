@@ -12,15 +12,15 @@ frappe.pages['import_data'].on_page_load = function(wrapper) {
             <p>Select CSV files to import:</p>
             <form id="import-form" enctype="multipart/form-data" method="POST">
                 <div class="form-group">
-                    <label for="file1">CSV File 1:</label>
+                    <label for="file1">File 1 (Material Request & Item):</label>
                     <input type="file" id="file1" name="file1" class="form-control" accept=".csv" required>
                 </div>
                 <div class="form-group">
-                    <label for="file2">CSV File 2:</label>
+                    <label for="file2">File 2 (Supplier):</label>
                     <input type="file" id="file2" name="file2" class="form-control" accept=".csv" required>
                 </div>
                 <div class="form-group">
-                    <label for="file3">CSV File 3:</label>
+                    <label for="file3">File 3 (Request for Quotation):</label>
                     <input type="file" id="file3" name="file3" class="form-control" accept=".csv" required>
                 </div>
                 <button type="submit" id="btn-submit" class="btn btn-primary">Importer les données</button>

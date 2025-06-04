@@ -8,8 +8,6 @@ def create_suppliers(suppliers):
     try:
         # Get valid values from ERPNext
         valid_countries = {c["name"] for c in frappe.get_all("Country", fields=["name"])}
-        # valid_supplier_groups = {sg["name"] for sg in frappe.get_all("Supplier Group", fields=["name"])}
-        # valid_currencies = {c["name"] for c in frappe.get_all("Currency", fields=["name"])}
         valid_types = {"Company", "Individual", "Partnership"}  # Adjust as needed
 
         errors = []
@@ -33,10 +31,11 @@ def create_suppliers(suppliers):
                     raise Exception(f"Invalid or missing 'country': {country}")
                 if not supplier_type or supplier_type not in valid_types:
                     raise Exception(f"Invalid or missing 'type': {supplier_type}")
-                # if not supplier_group or supplier_group not in valid_supplier_groups:
-                #     raise Exception(f"Invalid or missing 'supplier_group': {supplier_group}")
-                # if not default_currency or default_currency not in valid_currencies:
-                #     raise Exception(f"Invalid or missing 'default_currency': {default_currency}")
+
+                # Check if supplier already exists
+                if frappe.db.exists("Supplier", {"supplier_name": supplier_name}):
+                    frappe.msgprint(f"Supplier {supplier_name} already exists", title="Duplicate Supplier", indicator="yellow")
+                    continue
 
                 # Create supplier
                 doc = frappe.get_doc({
@@ -64,26 +63,24 @@ def create_suppliers(suppliers):
         frappe.throw(f"Fatal error during supplier import: {str(e)}", title="Critical Error")
 
 def create_material_requests(quotations_dict):
-    # frappe.msgprint(f"create_material_requests", title=None, indicator=None)
     try:
         # Fetch valid reference values
         valid_warehouses = {w["name"] for w in frappe.get_all("Warehouse", fields=["name"])}
-        valid_purposes = {"Sales", "Purchase", "Transfer"}  # Adjust based on your use case        
+        valid_purposes = {"Purchase", "Material Issue", "Material Transfer", "Manufacture", "Material Receipt"}
         valid_item_groups = set(frappe.db.get_all("Item Group", pluck="name"))
-        valid_items = set(frappe.db.get_all("Item", pluck="name"))
 
         quotations = {}
         errors = []
-
+        
+        # First pass: Create all material requests
         for idx, quotation in enumerate(quotations_dict, start=1):
             ref = quotation.get("ref")
             if ref not in quotations:
                 try:
                     date = quotation.get("date")
                     required_by = quotation.get("required_by")
-                    target_warehouse = f"{quotation.get('target_warehouse')}s - ITU"
+                    target_warehouse = "All Warehouses - ITU"
                     purpose = quotation.get("purpose")
-
 
                     # Validate required fields
                     if not date:
@@ -106,251 +103,309 @@ def create_material_requests(quotations_dict):
                     if not purpose or purpose not in valid_purposes:
                         raise Exception(f"Invalid or missing 'purpose': {purpose}")
 
-                    # Create the Quotation
+                    # Create the Material Request
                     quotations[ref] = frappe.get_doc({
                         "doctype": "Material Request",
                         "transaction_date": date,
                         "required_by": required_by,
-                        "target_warehouse": target_warehouse,
+                        "schedule_date": required_by,  # Added this to ensure it's set
+                        "set_warehouse": target_warehouse,
                         "purpose": purpose,
                         "items": []
                     })
-                    frappe.msgprint(f"{quotations}", title=None, indicator=None)
-
+                    
                 except Exception as e:
                     errors.append(f"<b>Line {idx}</b> - {str(e)}")
 
-            try:
-                frappe.msgprint(f"Initialization", title=None, indicator=None)
+        # Second pass: Create or check items and add them to the material requests
+        for idx, quotation in enumerate(quotations_dict, start=1):
+            ref = quotation.get("ref")
+            if ref in quotations:
+                try:
+                    item_name = quotation.get("item_name")
+                    item_group = quotation.get("item_groupe")
+                    required_by = quotation.get("required_by")
+                    quantity = quotation.get("quantity")
+                    target_warehouse = "All Warehouses - ITU"
 
-                item_name = quotation.get("item_name")
-                item_group = quotation.get("item_groupe")
-                required_by = quotation.get("required_by")
-                quantity = quotation.get("quantity")
-                target_warehouse = f"{quotation.get('target_warehouse')}s - ITU"
+                    # Validation
+                    if not item_name:
+                        raise Exception("Missing 'item_name'")
 
-
-                # Validation
-            
-                if not item_group:
-                    raise Exception(f"Invalid or missing 'item_group': {item_group}")
-                
-                if item_group not in valid_item_groups:
-                    # Try to create the item group
+                    if not item_group:
+                        raise Exception(f"Invalid or missing 'item_group': {item_group}")
+                    
+                    # Check if item exists first
+                    item_exists = frappe.db.exists("Item", {"item_name": item_name})
+                    
+                    # If item doesn't exist, create it
+                    if not item_exists:
+                        # Check if item group exists, create it if not
+                        if item_group not in valid_item_groups:
+                            try:
+                                if not frappe.db.exists("Item Group", {"item_group_name": item_group}):
+                                    frappe.get_doc({
+                                        "doctype": "Item Group",
+                                        "item_group_name": item_group,
+                                        "parent_item_group": "All Item Groups",
+                                        "is_group": 0
+                                    }).insert(ignore_permissions=True)
+                                    valid_item_groups.add(item_group)
+                            except Exception as e:
+                                raise Exception(f"Failed to create missing item_group '{item_group}': {str(e)}")
+                        
+                        # Create the item
+                        try:
+                            frappe.get_doc({
+                                "doctype": "Item",
+                                "item_code": item_name,
+                                "item_name": item_name,
+                                "item_group": item_group,
+                                "stock_uom": "Nos",
+                                "is_stock_item": 1
+                            }).insert(ignore_permissions=True)
+                            frappe.msgprint(f"Item {item_name} created successfully", title="Item Creation")
+                        except frappe.DuplicateEntryError:
+                            frappe.msgprint(f"Item {item_name} already exists", title="Duplicate Name", indicator="red")
+                    
+                    # Now add the item to the material request
+                    if not required_by:
+                        raise Exception("Missing 'required_by'")
                     try:
-                        frappe.get_doc({
-                            "doctype": "Item Group",
-                            "item_group_name": item_group,
-                            "parent_item_group": "All Item Groups",
-                            "is_group": 0
-                        }).insert(ignore_permissions=True)
-                        valid_item_groups.add(item_group)
-                    except Exception as e:
-                        raise Exception(f"Failed to create missing item_group '{item_group}': {str(e)}")
+                        required_by = datetime.datetime.strptime(required_by, "%d/%m/%Y").strftime("%Y-%m-%d")
+                    except ValueError:
+                        raise Exception(f"Invalid 'required_by' format: {required_by} (expected DD/MM/YYYY)")
 
-                if not required_by:
-                    raise Exception("Missing 'required_by'")
-                try:
-                    required_by = datetime.datetime.strptime(required_by, "%d/%m/%Y").strftime("%Y-%m-%d")
-                except ValueError:
-                    raise Exception(f"Invalid 'required_by' format: {required_by} (expected DD/MM/YYYY)")
+                    if quantity is None:
+                        raise Exception("Missing 'quantity'")
+                    try:
+                        quantity = float(quotation['quantity'])
+                        if quantity <= 0:
+                            raise Exception(f"Invalid 'quantity': {quantity} (must be a positive number)")
+                    except (ValueError, TypeError, KeyError):
+                        raise Exception(f"Invalid or missing 'quantity': {quotation.get('quantity')} (must be a positive number)")
 
-                if quantity is None:
-                    raise Exception("Missing 'quantity'")
-                try:
-                    quantity = float(quotation['quantity'])
-                    if quantity <= 0:
-                        raise Exception(f"Invalid 'quantity': {quantity} (must be a positive number)")
-                except (ValueError, TypeError, KeyError):
-                    raise Exception(f"Invalid or missing 'quantity': {quotation.get('quantity')} (must be a positive number)")
+                    if not target_warehouse or target_warehouse not in valid_warehouses:
+                        raise Exception(f"Invalid or missing 'target_warehouse': {target_warehouse}")
 
-                if not target_warehouse or target_warehouse not in valid_warehouses:
-                    raise Exception(f"Invalid or missing 'target_warehouse': {target_warehouse}")
+                    # Add the item to the material request
+                    quotations[ref].append("items", {
+                        "item_code": item_name,
+                        "item_name": item_name,
+                        "item_group": item_group,
+                        "schedule_date": required_by,
+                        "qty": quantity,
+                        "warehouse": target_warehouse
+                    })
+                    
+                except Exception as e:
+                    errors.append(f"<b>Line {idx}</b> (Material Request: {ref}) - {str(e)}")
 
-                # Create Material Request Item (or similar)
-                # You can adapt this block if you're creating something else
-
-                if not item_name:
-                    raise Exception(f"Invalid or missing 'item_name': {item_name}")
-                
-                if item_name not in valid_items:
-                    try : 
-                        frappe.get_doc({
-                            "doctype": "Item",
-                            "item_code": item_name,
-                            "item_name": item_name,
-                            "item_group": item_group,
-                            "stock_uom": "Nos",  # Mandatory field - change if needed
-                            "is_stock_item": 1   # Optional but commonly set
-                        }).insert(ignore_permissions=True)
-                        valid_items.add(item_name)
-                    except Exception as e:
-                        raise Exception(f"Failed to create missing item_name '{item_name}': {str(e)}")
-                
-                frappe.msgprint(f"Creation", title=None, indicator=None)
-
-
-                quotations[ref].append("items", {
-                    "item_code": item_name,
-                    "item_name": item_name,
-                    "item_group": item_group,
-                    "schedule_date": required_by,
-                    "qty": quantity,
-                    "warehouse": target_warehouse
-                })
-                frappe.msgprint(f"{quotations}", title=None, indicator=None)
-
+        # Insert all material requests
+        inserted_material_requests = {}
+        for ref, material_request in quotations.items():
+            try:
+                if len(material_request.items) > 0:
+                    material_request.insert(ignore_permissions=True)
+                    material_request.submit()
+                    inserted_material_requests[ref] = material_request
+                else:
+                    errors.append(f"Material Request {ref} has no items and was not created")
             except Exception as e:
-                errors.append(f"<b>Line {idx}</b> ( Material Request: - {str(e)}")
-
-        frappe.msgprint(f"{quotations}", title=None, indicator=None)
-        for _, quotation in quotations.items():
-            if len(quotation.items) > 0 :
-                quotation.insert(ignore_permissions=True)
-                quotation.submit()
+                errors.append(f"Failed to insert Material Request {ref}: {str(e)}")
 
         if errors:
             frappe.throw(
-                "<h4>Failed to create some quotations:</h4><ul><li>" +
+                "<h4>Failed to create some material requests:</h4><ul><li>" +
                 "</li><li>".join(errors) +
                 "</li></ul>",
-                title="Quotation Import Failed"
+                title="Material Request Import Failed"
             )
 
-        return quotations
+        return inserted_material_requests
 
     except Exception as e:
         frappe.throw(f"Fatal error during quotation import: {str(e)}", title="Critical Error")
 
 def create_request_for_quotation(material_requests, quotation_suppliers):
-    # frappe.msgprint(f"create_request_for_quotation", title=None, indicator=None)
-    quotations = {}
-    for i, material_request in material_requests.items():
-        try:
-            material_request.reload()
-            rfq = frappe.get_doc({
-                "doctype": "Request for Quotation",
-                "material_request": material_request.name,
-                "message_for_supplier": "Please quote your best prices and delivery times.",  # <-- Add this line
-                "request_date": frappe.utils.nowdate(),  # Today's date for RFQ
-                "items": [],
-                "suppliers": []
-            })
-            
-            for item in material_request.items:
-                rfq.append("items", {
-                    "item_code": item.item_code,
-                    "item_name": item.item_name,
-                    "description": item.description,
-                    "qty": item.qty,
-                    "uom": item.uom,
-                    "conversion_factor": 1.0,
-                    "warehouse": item.warehouse,
-                    "rate": 0.0  # You can leave the rate as 0 or calculate based on other logic
-                })
-            quotations[i] = rfq
-            # frappe.msgprint(f"{quotations}", title=None, indicator=None)
-        except Exception as e:
-            frappe.throw(f"Error creating RFQ from Material Request: {str(e)}")
-
     try:
         # Fetch valid reference values
         valid_suppliers = {w["name"] for w in frappe.get_all("Supplier", fields=["name"])}
+        quotations = {}
         errors = []
 
+        # First create all Request for Quotations based on Material Requests
+        for ref, material_request in material_requests.items():
+            try:
+                material_request.reload()
+                rfq = frappe.get_doc({
+                    "doctype": "Request for Quotation",
+                    "transaction_date": frappe.utils.nowdate(),
+                    "status": "Draft",
+                    "message_for_supplier": "Please quote your best prices and delivery times.",
+                    "items": [],
+                    "suppliers": []
+                })
+                
+                # Add material request items to RFQ
+                for item in material_request.items:
+                    rfq.append("items", {
+                        "item_code": item.item_code,
+                        "item_name": item.item_name,
+                        "description": item.description or item.item_name,
+                        "qty": item.qty,
+                        "uom": item.uom or "Nos",
+                        "conversion_factor": 1.0,
+                        "warehouse": item.warehouse,
+                        "material_request": material_request.name,
+                        "material_request_item": item.name
+                    })
+                
+                # Store the RFQ for further processing
+                quotations[ref] = rfq
+                
+            except Exception as e:
+                errors.append(f"Error creating RFQ from Material Request {material_request.name}: {str(e)}")
+
+        # Now add suppliers to the RFQs
         for idx, quotation_supplier in enumerate(quotation_suppliers, start=1):
             ref = quotation_supplier.get("ref_request_quotation")
             if ref in quotations:
                 try:
                     supplier = quotation_supplier.get("supplier")
+                    
+                    # Validate supplier
+                    if not supplier:
+                        raise Exception(f"Missing 'supplier' for RFQ reference {ref}")
+                    
+                    if supplier not in valid_suppliers:
+                        raise Exception(f"Invalid supplier '{supplier}' - not found in database")
 
-                    if not supplier or supplier not in valid_suppliers:
-                        raise Exception(f"Invalid or missing 'supplier': {supplier}")
-
+                    # Add supplier to RFQ
                     quotations[ref].append("suppliers", {
                         "supplier": supplier,
                         "supplier_name": supplier,
-                        "quotation_required": 1
+                        "email_id": "",  # Add email if available
+                        "contact": "",   # Add contact if available
+                        "send_email": 0  # Set to 1 if you want to send email
                     })
 
                 except Exception as e:
-                    errors.append(f"<b>Line {idx}</b> - {str(e)}")
-        # frappe.msgprint(f"{quotations}", title=None, indicator=None)
+                    errors.append(f"<b>Line {idx}</b> (RFQ supplier: {quotation_supplier.get('supplier', 'UNKNOWN')}) - {str(e)}")
 
-        for _, quotation in quotations.items():
-            quotation.insert(ignore_permissions=True)
-            quotation.submit()
-            # Supplier Quotation creation from each RFQ + supplier
-            for supplier_entry in quotation.suppliers:
-                supplier_quotation = frappe.get_doc({
-                    "doctype": "Supplier Quotation",
-                    "supplier": supplier_entry.supplier,
-                    "rfq": quotation.name,
-                    "items": [
-                        {
-                            "item_code": item.item_code,
-                            "qty": item.qty,
-                            "rate": 0.0  # Default rate
-                        } for item in quotation.items
-                    ],
-                    "docstatus": 0,  # Draft status
-                })
-                supplier_quotation.insert(ignore_permissions=True)
+        # Insert and submit all RFQs
+        inserted_rfqs = {}
+        for ref, rfq in quotations.items():
+            try:
+                if len(rfq.suppliers) > 0 and len(rfq.items) > 0:
+                    rfq.insert(ignore_permissions=True)
+                    rfq.submit()
+                    inserted_rfqs[ref] = rfq
+                    
+                    # Create Supplier Quotations from RFQ
+                    for supplier_entry in rfq.suppliers:
+                        try:
+                            sq = frappe.get_doc({
+                                "doctype": "Supplier Quotation",
+                                "supplier": supplier_entry.supplier,
+                                "currency": frappe.defaults.get_global_default("currency"),
+                                "buying_price_list": frappe.db.get_single_value("Buying Settings", "buying_price_list") or "Standard Buying",
+                                "transaction_date": frappe.utils.nowdate(),
+                                "valid_till": frappe.utils.add_days(frappe.utils.nowdate(), 30),
+                                "supplier_quotation_details": "",
+                                "terms": "",
+                                "items": []
+                            })
+                            
+                            # Link RFQ to Supplier Quotation
+                            sq.rfq = rfq.name
+                            
+                            # Add items from RFQ to Supplier Quotation
+                            for item in rfq.items:
+                                sq.append("items", {
+                                    "item_code": item.item_code,
+                                    "item_name": item.item_name,
+                                    "description": item.description,
+                                    "qty": item.qty,
+                                    "rate": 0.0,  # Default price
+                                    "uom": item.uom,
+                                    "stock_uom": item.stock_uom or "Nos",
+                                    "warehouse": item.warehouse,
+                                    "request_for_quotation": rfq.name,
+                                    "request_for_quotation_item": item.name,
+                                    "material_request": item.material_request,
+                                    "material_request_item": item.material_request_item
+                                })
+                            
+                            # Insert Supplier Quotation as draft
+                            sq.insert(ignore_permissions=True)
+                            
+                        except Exception as e:
+                            errors.append(f"Failed to create Supplier Quotation for RFQ {rfq.name}, Supplier {supplier_entry.supplier}: {str(e)}")
+            except Exception as e:
+                errors.append(f"Failed to insert RFQ for reference {ref}: {str(e)}")
 
         if errors:
             frappe.throw(
-                "<h4>Failed to create some quotations:</h4><ul><li>" +
+                "<h4>Failed to create some Request for Quotations:</h4><ul><li>" +
                 "</li><li>".join(errors) +
                 "</li></ul>",
-                title="Quotation Import Failed"
+                title="RFQ Import Failed"
             )
 
+        return inserted_rfqs
+
     except Exception as e:
-        frappe.throw(f"Fatal error during quotation import: {str(e)}", title="Critical Error")
+        frappe.throw(f"Fatal error during RFQ creation: {str(e)}", title="Critical Error")
 
 def fill_blank_items(items):
     updated_items = []
 
-    for supplier in items:
-        updated = supplier.copy()
+    for item in items:
+        updated = item.copy()
         updated.setdefault('stock_uom', "Nos")
-
         updated_items.append(updated)
 
     return updated_items
 
 def fill_blank_suppliers(suppliers):
     supplier_groups = [sg["name"] for sg in frappe.get_all("Supplier Group", fields=["name"])]
-    currencies = [c["name"] for c in frappe.get_all("Currency", fields=["name"])]
-
+    
     updated_suppliers = []
 
     for supplier in suppliers:
         updated = supplier.copy()
         # Fill missing but required ERPNext fields
-        updated.setdefault('supplier_group', random.choice(supplier_groups))
-        updated.setdefault('tax_id', "AB1234567")  # e.g., AB1234567
-        # fake.bothify(text='??#######')
-        updated.setdefault('default_currency', 'USD')
-        # updated.setdefault('default_currency', random.choice(currencies))
+        updated.setdefault('supplier_group', random.choice(supplier_groups) if supplier_groups else "All Supplier Groups")
+        updated.setdefault('tax_id', "AB1234567")  # Default tax ID
+        updated.setdefault('default_currency', 'USD')  # Default currency
 
         updated_suppliers.append(updated)
 
     return updated_suppliers
 
-def create_doctypes(quotations, suppliers, quotation_suppliers):
-    # fill blank columns with random data
-    suppliers = fill_blank_suppliers(suppliers)
-    quotations = fill_blank_items(quotations)
-    # insert into select suppliers
-    create_suppliers(suppliers)
-    # insert into select quotations
-    material_requests = create_material_requests(quotations)
-    # insert into select quotations_suppliers
-    create_request_for_quotation(material_requests, quotation_suppliers)
 
-    # return message
-    return "Data imported successfuly"
+def create_doctypes(quotations, suppliers, quotation_suppliers):
+    try:
+        # Fill blank columns with default data
+        suppliers = fill_blank_suppliers(suppliers)
+        quotations = fill_blank_items(quotations)
+        
+        # Insert suppliers first
+        create_suppliers(suppliers)
+        
+        # Create material requests from quotations
+        material_requests = create_material_requests(quotations)
+        
+        # Create RFQs and link suppliers
+        if material_requests:
+            create_request_for_quotation(material_requests, quotation_suppliers)
+
+        # Return success message
+        return "Data imported successfully"
+    
+    except Exception as e:
+        frappe.throw(f"Error in data import process: {str(e)}", title="Import Failed")
 
 
 def read_csv_file_as_dict(file_storage):
