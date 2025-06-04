@@ -1,8 +1,8 @@
 import frappe
 from frappe import _
 import base64
-from hrms.data.services.csv_service import Service
-from hrms.data.services.hrms_insertion import (
+from hrms.data.services.Service import Service
+from hrms.data.services.insert import (
     setup_hrms_data,
     insert_employees,
     insert_salary_components,

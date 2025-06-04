@@ -34,7 +34,7 @@ def setup_hrms_data(employee_dtos: list[EmployeeDTO], salary_dtos: list[SalaryDT
                         "line": 0,
                         "error_message": "Champ 'company' manquant ou invalide dans EmployeeDTO",
                         "data": {},
-                        "file": "employeesCsv"
+                        "file": "file1"
                     })
                     continue
 
@@ -47,7 +47,7 @@ def setup_hrms_data(employee_dtos: list[EmployeeDTO], salary_dtos: list[SalaryDT
                     # Verify reference company
                     ref_company = "noufre society"
                     if not frappe.db.exists("Company", ref_company):
-                        ref_company = "_Test Company"
+                        ref_company = "My Company"
                         if not frappe.db.exists("Company", ref_company):
                             raise ValueError(f"Compagnie de référence '{ref_company}' n'existe pas")
 
@@ -125,7 +125,7 @@ def setup_hrms_data(employee_dtos: list[EmployeeDTO], salary_dtos: list[SalaryDT
                                     "line": 0,
                                     "error_message": error_msg,
                                     "data": {},
-                                    "file": "employeesCsv"
+                                    "file": "file1"
                                 })
                                 print(error_msg)
                                 return None
@@ -170,7 +170,7 @@ def setup_hrms_data(employee_dtos: list[EmployeeDTO], salary_dtos: list[SalaryDT
                         "line": 0,
                         "error_message": f"Erreur configuration compagnie {company}: {str(e)}",
                         "data": {},
-                        "file": "employeesCsv"
+                        "file": "file1"
                     })
                     print(f"Company setup error for {company}: {str(e)}")
 
@@ -221,7 +221,7 @@ def insert_employees(dto_list: list[EmployeeDTO]):
                 "company": dto.company,
                 "status": "Active",
                 "employee_name": f"{dto.prenom} {dto.nom}",
-                "department": "Ressources humaines",
+                "department": "Human Resources",
                 "designation": get_or_create_designation("Employee"),
                 "default_holiday_list": holiday_list  # Assign default Holiday List
             }
@@ -289,7 +289,7 @@ def insert_salary_components(dto_list: list[SalaryDTO]):
                     "line": idx,
                     "error_message": f"Champ 'name' ou 'type' manquant pour composant à la ligne {idx}",
                     "data": vars(dto),
-                    "file": "salaryStructureCsv"
+                    "file": "file2"
                 })
                 continue
 
@@ -328,7 +328,7 @@ def insert_salary_components(dto_list: list[SalaryDTO]):
                 "line": idx,
                 "error_message": f"Erreur composant {dto.name or 'inconnu'} à la ligne {idx}: {str(e)}",
                 "data": vars(dto),
-                "file": "salaryStructureCsv"
+                "file": "file2"
             })
             print(f"Component insertion error at line {idx}: {str(e)}", "Component Error")
 
@@ -363,7 +363,7 @@ def insert_salary_structures(dto_list: list[SalaryDTO], payroll_dtos: list[Payro
                     "line": idx,
                     "error_message": f"Champ 'salary_structure' manquant à la ligne {idx}",
                     "data": vars(dto) if hasattr(dto, '__dict__') else dict(dto),
-                    "file": "salaryStructureCsv"
+                    "file": "file2"
                 })
                 continue
 
@@ -423,7 +423,7 @@ def insert_salary_structures(dto_list: list[SalaryDTO], payroll_dtos: list[Payro
                     "line": idx,
                     "error_message": f"Type manquant pour composant {dto.name} à la ligne {idx}",
                     "data": vars(dto) if hasattr(dto, '__dict__') else dict(dto),
-                    "file": "salaryStructureCsv"
+                    "file": "file2"
                 })
 
         except Exception as e:
@@ -431,7 +431,7 @@ def insert_salary_structures(dto_list: list[SalaryDTO], payroll_dtos: list[Payro
                 "line": idx,
                 "error_message": f"Erreur traitement structure à la ligne {idx}: {str(e)}",
                 "data": vars(dto) if hasattr(dto, '__dict__') else dict(dto),
-                "file": "salaryStructureCsv"
+                "file": "file2"
             })
             print(f"Structure processing error at line {idx}: {str(e)}", "Structure Error")
 
@@ -443,7 +443,7 @@ def insert_salary_structures(dto_list: list[SalaryDTO], payroll_dtos: list[Payro
                     "line": 0,
                     "error_message": f"Structure salariale {structure_name} existe déjà",
                     "data": components,
-                    "file": "salaryStructureCsv"
+                    "file": "file2"
                 })
                 continue
 
@@ -471,7 +471,7 @@ def insert_salary_structures(dto_list: list[SalaryDTO], payroll_dtos: list[Payro
                 "line": 0,
                 "error_message": f"Erreur insertion structure {structure_name}: {str(e)}",
                 "data": components,
-                "file": "salaryStructureCsv"
+                "file": "file2"
             })
             print(f"Structure insertion error for {structure_name}: {str(e)}", "Structure Error")
 
@@ -517,7 +517,7 @@ def insert_salary_assignments(dto_list: list[PayrollDTO]):
                 "line": idx,
                 "error_message": f"Erreur traitement données assignation pour employé {dto.ref_employe}: {str(e)}",
                 "data": vars(dto),
-                "file": "payrollCsv"
+                "file": "file3"
             })
 
     created = []
@@ -530,7 +530,7 @@ def insert_salary_assignments(dto_list: list[PayrollDTO]):
                     "line": assignment_data["line"],
                     "error_message": f"Employé {employee_ref} non trouvé",
                     "data": assignment_data,
-                    "file": "payrollCsv"
+                    "file": "file3"
                 })
                 continue
 
@@ -547,7 +547,7 @@ def insert_salary_assignments(dto_list: list[PayrollDTO]):
                     "line": assignment_data["line"],
                     "error_message": f"Structure salariale '{assignment_data['salary_structure']}' non trouvée",
                     "data": assignment_data,
-                    "file": "payrollCsv"
+                    "file": "file3"
                 })
                 continue
 
@@ -582,7 +582,7 @@ def insert_salary_assignments(dto_list: list[PayrollDTO]):
                 "line": assignment_data["line"],
                 "error_message": f"Erreur assignation pour {employee_ref}: {str(e)}",
                 "data": assignment_data,
-                "file": "payrollCsv"
+                "file": "file3"
             })
             print(f"Assignment error for {employee_ref}: {str(e)}", "Assignment Error")
 
@@ -612,7 +612,7 @@ def insert_salary_slips(dto_list: list[PayrollDTO]):
                     "line": idx,
                     "error_message": f"Employé {dto.ref_employe} non trouvé",
                     "data": vars(dto),
-                    "file": "payrollCsv"
+                    "file": "file3"
                 })
                 continue
 
@@ -636,7 +636,7 @@ def insert_salary_slips(dto_list: list[PayrollDTO]):
                     "line": idx,
                     "error_message": f"Aucune structure salariale assignée à l'employé {dto.ref_employe} pour la date {dto.mois}",
                     "data": vars(dto),
-                    "file": "payrollCsv"
+                    "file": "file3"
                 })
                 continue
 
@@ -655,7 +655,7 @@ def insert_salary_slips(dto_list: list[PayrollDTO]):
                     "line":0,
                     "error_message": f"Employé {dto.ref_employe} non trouvé",
                     "data": "",
-                    "file": "payrollCsv"
+                    "file": "file3"
                 })
                 continue
             
@@ -681,7 +681,7 @@ def insert_salary_slips(dto_list: list[PayrollDTO]):
                 "line": idx,
                 "error_message": f"Erreur bulletin {dto.ref_employe}: {str(e)}",
                 "data": vars(dto),
-                "file": "payrollCsv"
+                "file": "file3"
             })
             print(f"Salary slip error for {dto.ref_employe}: {str(e)}", "Salary Slip Error")
 
@@ -701,7 +701,7 @@ def convert_gender(genre):
         return 'Male'
     elif genre_lower in ['feminin', 'female', 'f']:
         return 'Female'
-    return 'Male'  # Default
+    return 'Other'  # Default
 
 def get_or_create_designation(designation_name):
     """Get or create a Designation."""
