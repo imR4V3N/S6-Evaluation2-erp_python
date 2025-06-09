@@ -13,12 +13,12 @@ frappe.pages['reset-data'].on_page_load = function(wrapper) {
 				<div class="checkbox-grid">
 					<label><input type="checkbox" id="select-all" /> <strong>All</strong></label><br>
 					<label><input type="checkbox" name="doctypes" value="Salary Slip" /> Salary Slip</label>
+					<label><input type="checkbox" name="doctypes" value="Salary Detail" /> Salary Detail</label>
 					<label><input type="checkbox" name="doctypes" value="Salary Structure Assignment" /> Salary Structure Assignment</label>
 					<label><input type="checkbox" name="doctypes" value="Salary Structure" /> Salary Structure</label>
 					<label><input type="checkbox" name="doctypes" value="Salary Component" /> Salary Component</label>
 					<label><input type="checkbox" name="doctypes" value="Employee" /> Employee</label>
 					<label><input type="checkbox" name="doctypes" value="Company" /> Company</label>
-
 				</div>
 				<button type="submit" class="btn btn-danger">Reset Selected</button>
 			</form>
