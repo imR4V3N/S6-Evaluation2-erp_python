@@ -41,11 +41,11 @@ def setup_hrms_data(employee_dtos: list[EmployeeDTO], salary_dtos: list[SalaryDT
                 try:
                     # Normalize company name and suffix
                     company = company.strip()
-                    company_suffix = 'MC' if company.lower().startswith('my company') else company[:2].upper()
+                    company_suffix = 'MC' if company.lower().startswith('my company') else company.upper()
                     print(f"Processing company: {company}, suffix: {company_suffix}")
 
                     # Verify reference company
-                    ref_company = "noufre society"
+                    ref_company = "My Company"
                     if not frappe.db.exists("Company", ref_company):
                         ref_company = "My Company"
                         if not frappe.db.exists("Company", ref_company):
@@ -57,7 +57,7 @@ def setup_hrms_data(employee_dtos: list[EmployeeDTO], salary_dtos: list[SalaryDT
                         company_doc = frappe.new_doc("Company")
                         company_doc.company_name = company
                         company_doc.abbr = company_suffix
-                        company_doc.default_currency = "EUR"
+                        company_doc.default_currency = "USD"
                         company_doc.create_chart_of_accounts_based_on = "Existing Company"
                         company_doc.existing_company = ref_company
                         company_doc.insert()
