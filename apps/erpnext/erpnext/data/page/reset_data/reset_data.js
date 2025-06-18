@@ -18,7 +18,6 @@ frappe.pages['reset-data'].on_page_load = function(wrapper) {
 					<label><input type="checkbox" name="doctypes" value="Salary Structure" /> Salary Structure</label>
 					<label><input type="checkbox" name="doctypes" value="Salary Component" /> Salary Component</label>
 					<label><input type="checkbox" name="doctypes" value="Employee" /> Employee</label>
-					<label><input type="checkbox" name="doctypes" value="Company" /> Company</label>
 				</div>
 				<button type="submit" class="btn btn-danger">Reset Selected</button>
 			</form>
