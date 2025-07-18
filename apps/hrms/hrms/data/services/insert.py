@@ -489,10 +489,9 @@ def insert_salary_assignments(dto_list: list[PayrollDTO]):
     """
     Insert Salary Structure Assignment records from PayrollDTO list.
     """
-    assignments_data = {}
+    created = []
     errors = []
 
-    # Group by employee and determine the earliest date
     for idx, dto in enumerate(dto_list, start=1):
         try:
             employee_ref = dto.ref_employe
@@ -500,54 +499,27 @@ def insert_salary_assignments(dto_list: list[PayrollDTO]):
             if not converted_date:
                 raise ValueError(f"Invalid date format for mois: {dto.mois}")
 
-            if employee_ref not in assignments_data:
-                assignments_data[employee_ref] = {
-                    "salary_structure": dto.salaire,
-                    "base_salary": dto.salaire_base,
-                    "start_date": converted_date,
-                    "line": idx
-                }
-            else:
-                # Update start_date to the earliest date
-                existing_date = assignments_data[employee_ref]["start_date"]
-                if converted_date < existing_date:
-                    assignments_data[employee_ref]["start_date"] = converted_date
-        except Exception as e:
-            errors.append({
-                "line": idx,
-                "error_message": f"Erreur traitement données assignation pour employé {dto.ref_employe}: {str(e)}",
-                "data": vars(dto),
-                "file": "file3"
-            })
+            print(f"Processing assignment for employee {dto.ref_employe} on date {converted_date}", "Assignment Debug")
 
-    created = []
-    for employee_ref, assignment_data in assignments_data.items():
-        try:
             # Get Employee details
             employee_data = frappe.db.get_value("Employee", {"ref": employee_ref}, ["name", "company", "date_of_joining"], as_dict=True)
             if not employee_data:
                 errors.append({
-                    "line": assignment_data["line"],
+                    "line": idx,
                     "error_message": f"Employé {employee_ref} non trouvé",
-                    "data": assignment_data,
-                    "file": "file3"
+                    "data": vars(dto),
+                    "file": "payrollCsv"
                 })
                 continue
 
-            # Use date_of_joining if earlier than start_date
-            from_date = assignment_data["start_date"]
-            if employee_data.date_of_joining and employee_data.date_of_joining < getdate(from_date):
-                from_date = employee_data.date_of_joining.strftime("%Y-%m-%d")
-
             # Check if Salary Structure exists
-            structure_name = frappe.db.get_value("Salary Structure", {"structure_name": assignment_data["salary_structure"]}, "name")
-            print(structure_name)
+            structure_name = frappe.db.get_value("Salary Structure", {"structure_name": dto.salaire}, "name")
             if not structure_name:
                 errors.append({
-                    "line": assignment_data["line"],
-                    "error_message": f"Structure salariale '{assignment_data['salary_structure']}' non trouvée",
-                    "data": assignment_data,
-                    "file": "file3"
+                    "line": idx,
+                    "error_message": f"Structure salariale '{dto.salaire}' non trouvée",
+                    "data": vars(dto),
+                    "file": "payrollCsv"
                 })
                 continue
 
@@ -555,34 +527,39 @@ def insert_salary_assignments(dto_list: list[PayrollDTO]):
             existing = frappe.db.exists("Salary Structure Assignment", {
                 "employee": employee_data.name,
                 "salary_structure": structure_name,
-                "from_date": ["<=", from_date],
-                "docstatus": 1
+                "from_date": converted_date
             })
-            if existing:
-                print(f"Assignment already exists for {employee_ref} with structure {assignment_data['salary_structure']}", "Assignment Debug")
-                continue
 
+            if existing:
+                service = FrappeDocumentService()
+                service.cancel_and_delete(
+                    doctype="Salary Structure Assignment",
+                    name=existing  # existing contient déjà le nom du document
+                )
+                print(f"Assignment already exists for {employee_ref} on {converted_date}, deleted and recreating", "Assignment Debug")
+
+            # Create new assignment
             assignment_doc_data = {
                 "doctype": "Salary Structure Assignment",
                 "employee": employee_data.name,
                 "salary_structure": structure_name,
-                "from_date": from_date,
-                "base": assignment_data["base_salary"],
+                "from_date": converted_date,
+                "base": dto.salaire_base,
                 "company": employee_data.company
             }
 
-            print(f"Inserting assignment for {employee_ref}: {assignment_doc_data}", "Assignment Debug")
+            print(f"Inserting assignment: {assignment_doc_data}", "Assignment Debug")
             assignment_doc = frappe.get_doc(assignment_doc_data)
             assignment_doc.insert()
             assignment_doc.submit()  # Submit to set docstatus=1
-            created.append(f"{employee_ref} -> {assignment_data['salary_structure']} from {from_date}")
+            created.append(f"{employee_ref} -> {dto.salaire} from {converted_date}")
 
         except Exception as e:
             errors.append({
-                "line": assignment_data["line"],
+                "line": idx,
                 "error_message": f"Erreur assignation pour {employee_ref}: {str(e)}",
-                "data": assignment_data,
-                "file": "file3"
+                "data": vars(dto),
+                "file": "payrollCsv"
             })
             print(f"Assignment error for {employee_ref}: {str(e)}", "Assignment Error")
 
@@ -612,7 +589,7 @@ def insert_salary_slips(dto_list: list[PayrollDTO]):
                     "line": idx,
                     "error_message": f"Employé {dto.ref_employe} non trouvé",
                     "data": vars(dto),
-                    "file": "file3"
+                    "file": "payrollCsv"
                 })
                 continue
 
@@ -636,18 +613,24 @@ def insert_salary_slips(dto_list: list[PayrollDTO]):
                     "line": idx,
                     "error_message": f"Aucune structure salariale assignée à l'employé {dto.ref_employe} pour la date {dto.mois}",
                     "data": vars(dto),
-                    "file": "file3"
+                    "file": "payrollCsv"
                 })
                 continue
 
             # Check if Salary Slip exists
             existing = frappe.db.exists("Salary Slip", {
-                "employee": employee,
-                "start_date": converted_date
+               "employee": employee,
+               "start_date": converted_date
             })
+            
             if existing:
-                print(f"Salary slip already exists for {dto.ref_employe} on {converted_date}", "Salary Slip Debug")
-                continue
+               service = FrappeDocumentService()
+               service.cancel_and_delete(
+                   doctype="Salary Slip",
+                   name=existing  # existing contient déjà le nom du document
+                )
+            print(f"Salary slip already exists for {dto.ref_employe} on {converted_date}", "Salary Slip Debug")
+                
             employee_data = frappe.db.get_value("Employee", {"ref": dto.ref_employe}, ["name", "company", "date_of_joining"], as_dict=True)
             
             if not employee_data:
@@ -655,7 +638,7 @@ def insert_salary_slips(dto_list: list[PayrollDTO]):
                     "line":0,
                     "error_message": f"Employé {dto.ref_employe} non trouvé",
                     "data": "",
-                    "file": "file3"
+                    "file": "payrollCsv"
                 })
                 continue
             
@@ -681,7 +664,7 @@ def insert_salary_slips(dto_list: list[PayrollDTO]):
                 "line": idx,
                 "error_message": f"Erreur bulletin {dto.ref_employe}: {str(e)}",
                 "data": vars(dto),
-                "file": "file3"
+                "file": "payrollCsv"
             })
             print(f"Salary slip error for {dto.ref_employe}: {str(e)}", "Salary Slip Error")
 
@@ -691,6 +674,7 @@ def insert_salary_slips(dto_list: list[PayrollDTO]):
         "created": created,
         "errors": errors
     }
+
 # =============================================================================
 # FONCTIONS UTILITAIRES
 # =============================================================================
